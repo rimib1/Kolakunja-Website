@@ -1,0 +1,6 @@
+{
+  "name": "Kolakunja Dance Academy",
+  "description": "An elegant, cultural, and professional website for Kolakunja Dance Academy, nurturing classical Indian dance forms like Kathak, Odissi, Folk, and Creative Dance under the guidance of Principal Rimi Bhowal.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

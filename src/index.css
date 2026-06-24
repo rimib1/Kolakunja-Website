@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  /* Sophisticated Dark Color Palette */
+  --color-maroon-50: #2d0a0a;
+  --color-maroon-100: #3d050f;
+  --color-maroon-200: #5c0b1a;
+  --color-maroon-300: #7a1529;
+  --color-maroon-400: #931931;
+  --color-maroon-500: #b82544;
+  --color-maroon-600: #cf3d5c;
+  --color-maroon-700: #e36e86;
+  --color-maroon-800: #efa3b1;
+  --color-maroon-900: #260808; /* Dark red-brown */
+  --color-maroon-950: #1a0505; /* Deepest black-burgundy */
+
+  --color-gold-50: #fefcf2;
+  --color-gold-100: #fdf7df;
+  --color-gold-200: #fbeea4;
+  --color-gold-300: #f7de6c;
+  --color-gold-400: #f2c735;
+  --color-gold-500: #D4AF37; /* Sophisticated Classic Gold */
+  --color-gold-600: #c58e12;
+  --color-gold-700: #a36f10;
+  --color-gold-800: #815410;
+  --color-gold-900: #65410f;
+  --color-gold-950: #3a2205;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #1a0505;
+  color: #FAF9F6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #1a0505;
+}
+::-webkit-scrollbar-thumb {
+  background: #D4AF37;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #f2c735;
+}
