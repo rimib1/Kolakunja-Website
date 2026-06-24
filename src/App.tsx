@@ -9,6 +9,7 @@ import Gallery from './components/Gallery';
 import InquiryForm from './components/InquiryForm';
 import { Inquiry } from './types';
 import { Mail, Phone, Facebook, Instagram, Youtube, Sparkles } from 'lucide-react';
+import academyLogo from './assets/images/academy_logo_1782307164272.jpg';
 
 export default function App() {
   const [inquiries, setInquiries] = useState<Inquiry[]>([]);
@@ -76,8 +77,6 @@ export default function App() {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   };
-
-  const academyLogo = '/src/assets/images/academy_logo_1782307164272.jpg';
 
   return (
     <div className="relative min-h-screen bg-[#1a0505]" id="app-root">

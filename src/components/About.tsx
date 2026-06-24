@@ -2,16 +2,20 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Award, Users, Heart, GraduationCap, Calendar, Sparkles, ChevronLeft, ChevronRight, Instagram, Youtube } from 'lucide-react';
 
+// Import images as ES modules so Vite compiles/hashes them for production
+import rimi_b6 from '../assets/images/rimi_b6.jpg';
+import rimi_b2 from '../assets/images/rimi_b2.jpg';
+
 export default function About() {
   const [currentPhoto, setCurrentPhoto] = useState(0);
 
   const principalPhotos = [
     {
-      url: '/src/assets/images/rimi_b6.jpg',
+      url: rimi_b6,
       alt: 'Rimi Bhowal - Principal of Kolakunja Dance Academy'
     },
     {
-      url: '/src/assets/images/rimi_b2.jpg',
+      url: rimi_b2,
       alt: 'Rimi Bhowal - Classical Odissi Performance'
     }
   ];

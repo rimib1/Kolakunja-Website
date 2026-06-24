@@ -2,6 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Play, Sparkles, BookOpen } from 'lucide-react';
 
+// Import images as ES modules so Vite compiles/hashes them for production
+import poster1 from '../assets/images/poster-1.jpg';
+import rimi_b3 from '../assets/images/rimi_b3.jpg';
+import rimi_b4 from '../assets/images/rimi_b4.jpg';
+import rimi_b5 from '../assets/images/rimi_b5.jpg';
+import poster_ from '../assets/images/poster_.jpg';
+
 interface HeroProps {
   onOpenInquiry: () => void;
 }
@@ -11,23 +18,23 @@ export default function Hero({ onOpenInquiry }: HeroProps) {
 
   const slides = [
     {
-      url: '/src/assets/images/poster-1.jpg',
+      url: poster1,
       alt: 'Kolakunja Classical Dance Academy Stage Event Poster'
     },
     {
-      url: '/src/assets/images/rimi_b3.jpg',
+      url: rimi_b3,
       alt: 'Rimi Bhowal Performing Graceful Kathak/Odissi'
     },
     {
-      url: '/src/assets/images/rimi_b4.jpg',
+      url: rimi_b4,
       alt: 'Rimi Bhowal - Classical Mudras Showcase'
     },
     {
-      url: '/src/assets/images/rimi_b5.jpg',
+      url: rimi_b5,
       alt: 'Rimi Bhowal performing on Stage with traditional jewelry'
     },
     {
-      url: '/src/assets/images/poster_.jpg',
+      url: poster_,
       alt: 'Kolakunja Dance Academy Cultural Festival Poster'
     }
   ];

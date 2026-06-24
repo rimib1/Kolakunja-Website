@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Users, Phone } from 'lucide-react';
+import logoPath from '../assets/images/academy_logo_1782307164272.jpg';
 
 interface NavbarProps {
   onOpenInquiry: () => void;
@@ -20,8 +21,6 @@ export default function Navbar({ onOpenInquiry }: NavbarProps) {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const logoPath = '/src/assets/images/academy_logo_1782307164272.jpg';
 
   const navLinks = [
     { name: 'Home', href: '#home' },
