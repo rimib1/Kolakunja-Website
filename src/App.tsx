@@ -9,7 +9,7 @@ import Gallery from './components/Gallery';
 import InquiryForm from './components/InquiryForm';
 import { Inquiry } from './types';
 import { Mail, Phone, Facebook, Instagram, Youtube, Sparkles } from 'lucide-react';
-import academyLogo from './assets/images/academy_logo_1782307164272.jpg';
+import academyLogo from './assets/images/kolakunja_logo.png';
 
 export default function App() {
   const [inquiries, setInquiries] = useState<Inquiry[]>([]);

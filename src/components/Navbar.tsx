@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Users, Phone } from 'lucide-react';
-import logoPath from '../assets/images/academy_logo_1782307164272.jpg';
+import logoPath from '../assets/images/kolakunja_logo.png';
 
 interface NavbarProps {
   onOpenInquiry: () => void;
