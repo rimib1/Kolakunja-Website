@@ -11,7 +11,7 @@ const getWhatsAppLink = (branchName: string, phone: string) => {
 
 export default function Branches() {
   return (
-    <section id="branches" className="py-24 bg-[#1a0505] text-[#FAF9F6] relative overflow-hidden">
+    <section id="branches" className="py-24 bg-[#1b0116] text-[#FAF9F6] relative overflow-hidden">
       {/* Decorative Ornaments */}
       <div className="absolute top-0 left-0 w-96 h-96 bg-[#D4AF37]/5 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#D4AF37]/2 rounded-full blur-3xl pointer-events-none" />
@@ -39,7 +39,7 @@ export default function Branches() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.15 }}
-              className={`relative bg-[#2d0a0a]/40 rounded-2xl p-6 sm:p-8 border hover:-translate-y-1 transition duration-300 flex flex-col justify-between ${
+              className={`relative bg-[#2e0527]/40 rounded-2xl p-6 sm:p-8 border hover:-translate-y-1 transition duration-300 flex flex-col justify-between ${
                 branch.status === 'Upcoming'
                   ? 'border-[#D4AF37]/30 shadow-[0_0_15px_rgba(212,175,55,0.1)]'
                   : 'border-[#D4AF37]/10 hover:border-[#D4AF37]/25 shadow-xl'
@@ -52,7 +52,7 @@ export default function Branches() {
                     <MapPin className="w-6 h-6 animate-pulse" />
                   </div>
                   {branch.status === 'Upcoming' ? (
-                    <span className="bg-[#D4AF37] text-[#1a0505] text-[10px] font-sans font-extrabold tracking-widest px-2.5 py-1 rounded-full uppercase">
+                    <span className="bg-[#D4AF37] text-[#1b0116] text-[10px] font-sans font-extrabold tracking-widest px-2.5 py-1 rounded-full uppercase">
                       Opening Soon
                     </span>
                   ) : (
@@ -71,7 +71,7 @@ export default function Branches() {
                 </p>
 
                 {/* Address Card */}
-                <div className="mt-6 p-4 rounded-xl bg-[#1a0505]/60 border border-[#D4AF37]/5 space-y-2.5">
+                <div className="mt-6 p-4 rounded-xl bg-[#1b0116]/60 border border-[#D4AF37]/5 space-y-2.5">
                   <p className="text-[11px] font-sans uppercase font-bold tracking-wider text-[#D4AF37]">
                     Address:
                   </p>

@@ -46,10 +46,10 @@ export const DANCE_STYLES: DanceStyle[] = [
 export const BRANCHES: Branch[] = [
   {
     id: 'agarpara',
-    name: 'Agarpara Branch (Principal)',
+    name: 'Agarpara Branch (Guruma)',
     address: 'Anima Apartment Ground Floor, Ellias Road, Agarpara, Kolkata, West Bengal, India, 700058',
     status: 'Active',
-    tagline: 'Our premier state-of-the-art facility featuring spacious mirrored halls and regular masterclasses with Principal Rimi Bhowal.',
+    tagline: 'Our premier state-of-the-art facility featuring spacious mirrored halls and regular masterclasses with Guruma Rimi Bhowal.',
     phone: '+91 80171 17152'
   },
   {

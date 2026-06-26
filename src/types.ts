@@ -6,7 +6,7 @@ export interface Inquiry {
   phoneNumber: string;
   email: string;
   preferredBranch: 'Agarpara' | 'Birbhum';
-  preferredDanceStyle: 'Kathak' | 'Odissi' | 'Folk' | 'Creative';
+  preferredDanceStyle: 'Kathak' | 'Odissi' | 'Folk' | 'Rabindranritya' | 'Creative';
   message: string;
   status: 'Pending' | 'Contacted' | 'Enrolled' | 'Archived';
   createdAt: string;

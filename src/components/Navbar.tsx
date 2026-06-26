@@ -36,7 +36,7 @@ export default function Navbar({ onOpenInquiry }: NavbarProps) {
       id="main-nav"
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-[#2d0a0a]/95 backdrop-blur-md shadow-lg border-b border-[#D4AF37]/30 py-2'
+          ? 'bg-[#2e0527]/95 backdrop-blur-md shadow-lg border-b border-[#D4AF37]/30 py-2'
           : 'bg-gradient-to-b from-black/80 to-transparent py-4'
       }`}
     >
@@ -44,7 +44,7 @@ export default function Navbar({ onOpenInquiry }: NavbarProps) {
         <div className="flex items-center justify-between h-16">
           {/* Logo and Brand */}
           <a href="#home" className="flex items-center space-x-3 group" id="brand-logo-link">
-            <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-[#D4AF37] bg-[#2d0a0a] shadow-md group-hover:border-[#FAF9F6] transition duration-300">
+            <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-[#D4AF37] bg-[#2e0527] shadow-md group-hover:border-[#FAF9F6] transition duration-300">
               <img
                 src={logoPath}
                 alt="Kolakunja Logo"
@@ -83,7 +83,7 @@ export default function Navbar({ onOpenInquiry }: NavbarProps) {
             <button
               onClick={onOpenInquiry}
               id="btn-nav-enquire-desktop"
-              className="px-6 py-2 bg-[#D4AF37] text-[#1a0505] text-xs font-bold uppercase tracking-widest rounded-sm hover:bg-[#FAF9F6] transition-colors cursor-pointer"
+              className="px-6 py-2 bg-[#D4AF37] text-[#1b0116] text-xs font-bold uppercase tracking-widest rounded-sm hover:bg-[#FAF9F6] transition-colors cursor-pointer"
             >
               Enquire Now
             </button>
@@ -94,7 +94,7 @@ export default function Navbar({ onOpenInquiry }: NavbarProps) {
             <button
               onClick={() => setIsOpen(!isOpen)}
               id="btn-mobile-menu-toggle"
-              className="p-2 rounded-md text-[#D4AF37] hover:text-[#FAF9F6] hover:bg-[#2d0a0a]/50 focus:outline-none transition duration-300"
+              className="p-2 rounded-md text-[#D4AF37] hover:text-[#FAF9F6] hover:bg-[#2e0527]/50 focus:outline-none transition duration-300"
             >
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -104,14 +104,14 @@ export default function Navbar({ onOpenInquiry }: NavbarProps) {
 
       {/* Mobile Drawer menu */}
       {isOpen && (
-        <div className="md:hidden bg-[#1a0505] border-t border-[#D4AF37]/25 animate-fade-in-down" id="mobile-drawer">
+        <div className="md:hidden bg-[#1b0116] border-t border-[#D4AF37]/25 animate-fade-in-down" id="mobile-drawer">
           <div className="px-2 pt-2 pb-4 space-y-1 sm:px-3 shadow-inner">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className="block px-3 py-3 rounded-md text-base font-medium text-gray-200 hover:text-[#D4AF37] hover:bg-[#2d0a0a]/40 transition duration-300"
+                className="block px-3 py-3 rounded-md text-base font-medium text-gray-200 hover:text-[#D4AF37] hover:bg-[#2e0527]/40 transition duration-300"
               >
                 {link.name}
               </a>
@@ -123,7 +123,7 @@ export default function Navbar({ onOpenInquiry }: NavbarProps) {
                   onOpenInquiry();
                 }}
                 id="btn-nav-enquire-mobile"
-                className="w-full text-center bg-[#D4AF37] text-[#1a0505] font-sans text-sm font-bold py-3 rounded-sm uppercase tracking-widest hover:bg-[#FAF9F6] transition-colors cursor-pointer"
+                className="w-full text-center bg-[#D4AF37] text-[#1b0116] font-sans text-sm font-bold py-3 rounded-sm uppercase tracking-widest hover:bg-[#FAF9F6] transition-colors cursor-pointer"
               >
                 Enquire Now
               </button>

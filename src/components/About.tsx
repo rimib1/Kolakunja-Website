@@ -9,10 +9,10 @@ import rimi_b2 from '../assets/images/rimi_b2.jpg';
 export default function About() {
   const [currentPhoto, setCurrentPhoto] = useState(0);
 
-  const principalPhotos = [
+  const gurumaPhotos = [
     {
       url: rimi_b6,
-      alt: 'Rimi Bhowal - Principal of Kolakunja Dance Academy'
+      alt: 'Rimi Bhowal - Guruma of Kolakunja Dance Academy'
     },
     {
       url: rimi_b2,
@@ -22,27 +22,27 @@ export default function About() {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentPhoto((prev) => (prev + 1) % principalPhotos.length);
+      setCurrentPhoto((prev) => (prev + 1) % gurumaPhotos.length);
     }, 5000);
     return () => clearInterval(timer);
-  }, [principalPhotos.length]);
+  }, [gurumaPhotos.length]);
 
   const handleNext = () => {
-    setCurrentPhoto((prev) => (prev + 1) % principalPhotos.length);
+    setCurrentPhoto((prev) => (prev + 1) % gurumaPhotos.length);
   };
 
   const handlePrev = () => {
-    setCurrentPhoto((prev) => (prev - 1 + principalPhotos.length) % principalPhotos.length);
+    setCurrentPhoto((prev) => (prev - 1 + gurumaPhotos.length) % gurumaPhotos.length);
   };
 
   const stats = [
     { label: 'Followers & Students', value: '6.1K+', icon: Users, description: 'Dedicated and growing community' },
-    { label: 'Academy Established', value: 'June 2023', icon: Calendar, description: 'Nurturing dance since inception' },
+    { label: 'Academy Established', value: 'Jan 2016', icon: Calendar, description: 'Nurturing dance since inception' },
     { label: 'Core Specializations', value: 'Kathak & Odissi', icon: Award, description: 'Pristine classical techniques' },
   ];
 
   return (
-    <section id="about" className="py-24 bg-gradient-to-b from-[#1a0505] to-[#260808] text-[#FAF9F6] relative overflow-hidden">
+    <section id="about" className="py-24 bg-gradient-to-b from-[#1b0116] to-[#1d0218] text-[#FAF9F6] relative overflow-hidden">
       {/* Background Ornament Accents */}
       <div className="absolute inset-0 opacity-10 bg-radial-pattern bg-cover pointer-events-none" />
       <div className="absolute top-0 right-0 w-96 h-96 bg-[#D4AF37]/10 rounded-full blur-3xl pointer-events-none" />
@@ -54,7 +54,7 @@ export default function About() {
             Guiding Light of Kolakunja
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-white tracking-tight">
-            Meet Our Principal
+            Meet Our Guruma
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent mx-auto mt-4" />
         </div>
@@ -73,12 +73,12 @@ export default function About() {
               <div className="absolute inset-0 border-2 border-[#D4AF37] rounded-2xl transform translate-x-4 translate-y-4 transition duration-300 group-hover:translate-x-2 group-hover:translate-y-2" />
               
               {/* Image Frame with Overlay */}
-              <div className="relative z-10 rounded-2xl overflow-hidden aspect-[3/4] shadow-2xl border border-[#D4AF37]/30 bg-[#1a0505]">
+              <div className="relative z-10 rounded-2xl overflow-hidden aspect-[3/4] shadow-2xl border border-[#D4AF37]/30 bg-[#1b0116]">
                 <AnimatePresence initial={false} mode="wait">
                   <motion.img
                     key={currentPhoto}
-                    src={principalPhotos[currentPhoto].url}
-                    alt={principalPhotos[currentPhoto].alt}
+                    src={gurumaPhotos[currentPhoto].url}
+                    alt={gurumaPhotos[currentPhoto].alt}
                     initial={{ opacity: 0, scale: 1.05 }}
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0 }}
@@ -87,12 +87,12 @@ export default function About() {
                     referrerPolicy="no-referrer"
                   />
                 </AnimatePresence>
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1a0505]/85 via-transparent to-transparent opacity-60 pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1b0116]/85 via-transparent to-transparent opacity-60 pointer-events-none" />
                 
                 {/* Navigation Arrows */}
                 <button
                   onClick={(e) => { e.stopPropagation(); handlePrev(); }}
-                  className="absolute left-3 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full bg-[#1a0505]/60 hover:bg-[#D4AF37] text-white hover:text-[#1a0505] flex items-center justify-center transition border border-[#D4AF37]/30 hover:border-[#D4AF37] opacity-0 group-hover:opacity-100 focus:opacity-100 cursor-pointer"
+                  className="absolute left-3 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full bg-[#1b0116]/60 hover:bg-[#D4AF37] text-white hover:text-[#1b0116] flex items-center justify-center transition border border-[#D4AF37]/30 hover:border-[#D4AF37] opacity-0 group-hover:opacity-100 focus:opacity-100 cursor-pointer"
                   aria-label="Previous image"
                   title="Previous image"
                 >
@@ -100,7 +100,7 @@ export default function About() {
                 </button>
                 <button
                   onClick={(e) => { e.stopPropagation(); handleNext(); }}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full bg-[#1a0505]/60 hover:bg-[#D4AF37] text-white hover:text-[#1a0505] flex items-center justify-center transition border border-[#D4AF37]/30 hover:border-[#D4AF37] opacity-0 group-hover:opacity-100 focus:opacity-100 cursor-pointer"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full bg-[#1b0116]/60 hover:bg-[#D4AF37] text-white hover:text-[#1b0116] flex items-center justify-center transition border border-[#D4AF37]/30 hover:border-[#D4AF37] opacity-0 group-hover:opacity-100 focus:opacity-100 cursor-pointer"
                   aria-label="Next image"
                   title="Next image"
                 >
@@ -109,7 +109,7 @@ export default function About() {
 
                 {/* Dot Indicators */}
                 <div className="absolute bottom-20 left-0 right-0 z-20 flex justify-center space-x-2 pointer-events-auto">
-                  {principalPhotos.map((_, index) => (
+                  {gurumaPhotos.map((_, index) => (
                     <button
                       key={index}
                       onClick={(e) => { e.stopPropagation(); setCurrentPhoto(index); }}
@@ -125,11 +125,11 @@ export default function About() {
                 </div>
 
                 {/* Embedded Badge */}
-                <div className="absolute bottom-4 left-4 right-4 bg-[#1a0505]/95 backdrop-blur-md border border-[#D4AF37]/30 p-3.5 rounded-lg z-20 flex items-center justify-between">
+                <div className="absolute bottom-4 left-4 right-4 bg-[#1b0116]/95 backdrop-blur-md border border-[#D4AF37]/30 p-3.5 rounded-lg z-20 flex items-center justify-between">
                   <div>
                     <h3 className="font-serif text-lg font-bold text-[#D4AF37]">Rimi Bhowal</h3>
                     <p className="text-[11px] font-sans text-[#FAF9F6]/80 font-medium tracking-wide">
-                      Owner & Principal, Kolakunja Dance Academy
+                      Founder & Guruma, Kolakunja Dance Academy
                     </p>
                   </div>
                   <div className="flex space-x-2 flex-shrink-0">
@@ -137,7 +137,7 @@ export default function About() {
                       href="https://www.instagram.com/bhowalrimi/"
                       target="_blank"
                       rel="noreferrer"
-                      className="w-8 h-8 rounded-full bg-[#D4AF37]/10 hover:bg-[#D4AF37] text-[#D4AF37] hover:text-[#1a0505] flex items-center justify-center border border-[#D4AF37]/20 transition duration-300"
+                      className="w-8 h-8 rounded-full bg-[#D4AF37]/10 hover:bg-[#D4AF37] text-[#D4AF37] hover:text-[#1b0116] flex items-center justify-center border border-[#D4AF37]/20 transition duration-300"
                       title="Follow on Instagram"
                       onClick={(e) => e.stopPropagation()}
                     >
@@ -147,7 +147,7 @@ export default function About() {
                       href="https://www.youtube.com/@RimiBhowalDancer"
                       target="_blank"
                       rel="noreferrer"
-                      className="w-8 h-8 rounded-full bg-[#D4AF37]/10 hover:bg-[#D4AF37] text-[#D4AF37] hover:text-[#1a0505] flex items-center justify-center border border-[#D4AF37]/20 transition duration-300"
+                      className="w-8 h-8 rounded-full bg-[#D4AF37]/10 hover:bg-[#D4AF37] text-[#D4AF37] hover:text-[#1b0116] flex items-center justify-center border border-[#D4AF37]/20 transition duration-300"
                       title="Subscribe on YouTube"
                       onClick={(e) => e.stopPropagation()}
                     >
@@ -206,7 +206,7 @@ export default function About() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: i * 0.1 }}
-                  className="bg-[#2d0a0a]/50 border border-[#D4AF37]/10 hover:border-[#D4AF37]/35 p-4 rounded-xl transition duration-300 shadow-lg flex flex-col items-center text-center"
+                  className="bg-[#2e0527]/50 border border-[#D4AF37]/10 hover:border-[#D4AF37]/35 p-4 rounded-xl transition duration-300 shadow-lg flex flex-col items-center text-center"
                 >
                   <div className="w-10 h-10 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/20 flex items-center justify-center mb-3">
                     <stat.icon className="w-5 h-5 text-[#D4AF37]" />
@@ -224,7 +224,7 @@ export default function About() {
               ))}
             </div>
 
-            {/* Quote of the Principal */}
+            {/* Quote of Guruma */}
             <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -233,7 +233,7 @@ export default function About() {
               className="border-l-4 border-[#D4AF37] pl-4 py-1 italic text-[#FAF9F6]/90 text-sm font-serif leading-relaxed bg-[#D4AF37]/5 rounded-r"
             >
               "Dance is not just movement; it is a sacred offering, a conversation between the soul and the divine. At Kolakunja, we don't just teach steps, we nurture a lifelong passion."
-              <span className="block mt-1.5 font-sans font-semibold text-[11px] uppercase tracking-wider text-[#D4AF37]">— Principal Rimi Bhowal</span>
+              <span className="block mt-1.5 font-sans font-semibold text-[11px] uppercase tracking-wider text-[#D4AF37]">— Guruma Rimi Bhowal</span>
             </motion.div>
           </div>
         </div>

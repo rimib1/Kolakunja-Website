@@ -116,7 +116,7 @@ export default function Hero({ onOpenInquiry }: HeroProps) {
           transition={{ duration: 1, delay: 0.5 }}
           className="max-w-2xl mx-auto text-base sm:text-lg md:text-xl text-[#FAF9F6]/85 font-sans font-light leading-relaxed mb-8 px-2"
         >
-          Welcome to <strong className="font-semibold text-[#D4AF37] text-glow">Kolakunja Dance Academy</strong>, nurturing the timeless arts of Kathak, Odissi, Folk, and Creative Dance under the guidance of our esteemed Principal Rimi Bhowal.
+          Welcome to <strong className="font-semibold text-[#D4AF37] text-glow">Kolakunja Dance Academy</strong>, nurturing the timeless arts of Kathak, Odissi, Folk, and Creative Dance under the guidance of our esteemed Guruma Rimi Bhowal.
         </motion.p>
 
         {/* Founder Tagline */}
@@ -124,7 +124,7 @@ export default function Hero({ onOpenInquiry }: HeroProps) {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.7 }}
-          className="max-w-md mx-auto py-2.5 px-4 mb-10 rounded border border-[#D4AF37]/20 bg-[#1a0505]/60 backdrop-blur-sm"
+          className="max-w-md mx-auto py-2.5 px-4 mb-10 rounded border border-[#D4AF37]/20 bg-[#1b0116]/60 backdrop-blur-sm"
         >
           <p className="text-xs sm:text-sm font-serif italic text-[#D4AF37]/95 font-medium tracking-wide">
             "Owner of Kolakunja, an institution of Kathak & Odissi"
@@ -140,14 +140,14 @@ export default function Hero({ onOpenInquiry }: HeroProps) {
         >
           <a
             href="#styles"
-            className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 border border-[#D4AF37]/50 hover:border-[#D4AF37] bg-[#1a0505]/30 hover:bg-[#D4AF37]/10 text-[#D4AF37] hover:text-white font-sans text-sm font-semibold px-8 py-3.5 rounded shadow-lg transition duration-300 uppercase tracking-wider"
+            className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 border border-[#D4AF37]/50 hover:border-[#D4AF37] bg-[#1b0116]/30 hover:bg-[#D4AF37]/10 text-[#D4AF37] hover:text-white font-sans text-sm font-semibold px-8 py-3.5 rounded shadow-lg transition duration-300 uppercase tracking-wider"
           >
             <BookOpen className="w-4 h-4" />
             <span>Explore Classes</span>
           </a>
           <button
             onClick={onOpenInquiry}
-            className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-[#D4AF37] text-[#1a0505] font-sans text-sm font-bold tracking-widest px-8 py-3.5 rounded-sm hover:bg-[#FAF9F6] hover:scale-[1.02] transform transition duration-300 uppercase shadow-xl cursor-pointer"
+            className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-[#D4AF37] text-[#1b0116] font-sans text-sm font-bold tracking-widest px-8 py-3.5 rounded-sm hover:bg-[#FAF9F6] hover:scale-[1.02] transform transition duration-300 uppercase shadow-xl cursor-pointer"
           >
             <span>Admission Inquiry</span>
           </button>
@@ -159,7 +159,7 @@ export default function Hero({ onOpenInquiry }: HeroProps) {
         <svg
           viewBox="0 0 1200 120"
           preserveAspectRatio="none"
-          className="relative block w-full h-[40px] md:h-[60px] fill-[#1a0505]"
+          className="relative block w-full h-[40px] md:h-[60px] fill-[#1b0116]"
         >
           <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,42.4V0Z" />
         </svg>

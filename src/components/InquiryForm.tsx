@@ -15,7 +15,7 @@ export default function InquiryForm({ onSubmitSuccess }: InquiryFormProps) {
     phoneNumber: '',
     email: '',
     preferredBranch: 'Agarpara',
-    preferredDanceStyle: 'Kathak',
+    preferredDanceStyle: 'Odissi',
     message: '',
   });
 
@@ -54,7 +54,7 @@ export default function InquiryForm({ onSubmitSuccess }: InquiryFormProps) {
       phoneNumber: formData.phoneNumber,
       email: formData.email,
       preferredBranch: formData.preferredBranch as 'Agarpara' | 'Birbhum',
-      preferredDanceStyle: formData.preferredDanceStyle as 'Kathak' | 'Odissi' | 'Folk' | 'Creative',
+      preferredDanceStyle: formData.preferredDanceStyle as 'Kathak' | 'Odissi' | 'Folk' | 'Rabindranritya' | 'Creative',
       message: formData.message,
       status: 'Pending',
       createdAt: new Date().toISOString(),
@@ -111,7 +111,7 @@ export default function InquiryForm({ onSubmitSuccess }: InquiryFormProps) {
       phoneNumber: '',
       email: '',
       preferredBranch: 'Agarpara',
-      preferredDanceStyle: 'Kathak',
+      preferredDanceStyle: 'Odissi',
       message: '',
     });
   };
@@ -137,9 +137,9 @@ export default function InquiryForm({ onSubmitSuccess }: InquiryFormProps) {
         </div>
 
         {/* Outer Form Card */}
-        <div className="bg-[#2d0a0a] rounded-xl border border-[#D4AF37]/35 shadow-2xl overflow-hidden grid grid-cols-1 md:grid-cols-12">
+        <div className="bg-[#2e0527] rounded-xl border border-[#D4AF37]/35 shadow-2xl overflow-hidden grid grid-cols-1 md:grid-cols-12">
           {/* Form Left Branding Column (4 columns) */}
-          <div className="md:col-span-4 bg-[#1a0505] text-[#FAF9F6] p-8 sm:p-10 flex flex-col justify-between relative overflow-hidden border-r border-[#D4AF37]/25">
+          <div className="md:col-span-4 bg-[#1b0116] text-[#FAF9F6] p-8 sm:p-10 flex flex-col justify-between relative overflow-hidden border-r border-[#D4AF37]/25">
             <div className="absolute inset-0 opacity-10 bg-radial-pattern pointer-events-none" />
             <div className="relative z-10 space-y-6">
               <span className="text-[#D4AF37] font-sans text-[10px] uppercase font-bold tracking-[0.2em] block">
@@ -310,10 +310,10 @@ export default function InquiryForm({ onSubmitSuccess }: InquiryFormProps) {
                         id="preferredBranch"
                         value={formData.preferredBranch}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 rounded-lg bg-[#1a0505] border border-white/10 focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37] outline-none text-xs sm:text-sm font-sans text-[#FAF9F6] transition cursor-pointer"
+                        className="w-full px-4 py-3 rounded-lg bg-[#1b0116] border border-white/10 focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37] outline-none text-xs sm:text-sm font-sans text-[#FAF9F6] transition cursor-pointer"
                       >
-                        <option value="Agarpara" className="bg-[#1a0505]">Agarpara Branch (Kolkata)</option>
-                        <option value="Birbhum" className="bg-[#1a0505]">Birbhum Branch (Lauberia)</option>
+                        <option value="Agarpara" className="bg-[#1b0116]">Agarpara Branch (Kolkata)</option>
+                        <option value="Birbhum" className="bg-[#1b0116]">Birbhum Branch (Lauberia)</option>
                       </select>
                     </div>
 
@@ -327,12 +327,12 @@ export default function InquiryForm({ onSubmitSuccess }: InquiryFormProps) {
                         id="preferredDanceStyle"
                         value={formData.preferredDanceStyle}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 rounded-lg bg-[#1a0505] border border-white/10 focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37] outline-none text-xs sm:text-sm font-sans text-[#FAF9F6] transition cursor-pointer"
+                        className="w-full px-4 py-3 rounded-lg bg-[#1b0116] border border-white/10 focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37] outline-none text-xs sm:text-sm font-sans text-[#FAF9F6] transition cursor-pointer"
                       >
-                        <option value="Kathak" className="bg-[#1a0505]">Kathak Training</option>
-                        <option value="Odissi" className="bg-[#1a0505]">Odissi Training</option>
-                        <option value="Folk" className="bg-[#1a0505]">Folk Dance</option>
-                        <option value="Creative" className="bg-[#1a0505]">Creative / Fusion Dance</option>
+                        <option value="Odissi" className="bg-[#1b0116]">Odissi Training</option>
+                        <option value="Kathak" className="bg-[#1b0116]">Kathak Training</option>
+                        <option value="Folk" className="bg-[#1b0116]">Folk Dance</option>
+                        <option value="Rabindranritya" className="bg-[#1b0116]">Rabindra Nritya</option>
                       </select>
                     </div>
                   </div>
@@ -358,11 +358,11 @@ export default function InquiryForm({ onSubmitSuccess }: InquiryFormProps) {
                     type="submit"
                     disabled={isSubmitting}
                     id="btn-submit-inquiry"
-                    className="w-full inline-flex items-center justify-center space-x-2 bg-[#D4AF37] hover:bg-[#FAF9F6] text-[#1a0505] font-sans text-sm font-bold py-4 rounded-lg shadow-lg shadow-[#D4AF37]/15 transform hover:-translate-y-0.5 transition duration-300 uppercase tracking-widest cursor-pointer disabled:opacity-50"
+                    className="w-full inline-flex items-center justify-center space-x-2 bg-[#D4AF37] hover:bg-[#FAF9F6] text-[#1b0116] font-sans text-sm font-bold py-4 rounded-lg shadow-lg shadow-[#D4AF37]/15 transform hover:-translate-y-0.5 transition duration-300 uppercase tracking-widest cursor-pointer disabled:opacity-50"
                   >
                     {isSubmitting ? (
                       <span className="inline-flex items-center">
-                        <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-[#1a0505]" fill="none" viewBox="0 0 24 24">
+                        <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-[#1b0116]" fill="none" viewBox="0 0 24 24">
                           <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
                           <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
                         </svg>
@@ -418,7 +418,7 @@ export default function InquiryForm({ onSubmitSuccess }: InquiryFormProps) {
                   </div>
 
                   <p className="max-w-md text-sm text-[#FAF9F6]/80 font-sans font-light leading-relaxed">
-                    Thank you for reaching out to <strong>Kolakunja Dance Academy</strong>. Your inquiry has been logged directly into our master roster. Our Principal, <strong>Rimi Bhowal</strong>, or her administrative panel will review and contact you via Phone or Email within 24 hours.
+                    Thank you for reaching out to <strong>Kolakunja Dance Academy</strong>. Your inquiry has been logged directly into our master roster. Our Guruma, <strong>Rimi Bhowal</strong>, or her administrative panel will review and contact you via Phone or Email within 24 hours.
                   </p>
 
                   <div className="p-4 rounded-xl bg-[#D4AF37]/5 border border-[#D4AF37]/25 max-w-sm w-full space-y-2">
@@ -431,7 +431,7 @@ export default function InquiryForm({ onSubmitSuccess }: InquiryFormProps) {
                     </p>
                     {(import.meta as any).env.VITE_WEB3FORMS_ACCESS_KEY ? (
                       <p className="text-[9px] text-emerald-400 font-sans border-t border-[#D4AF37]/10 pt-2">
-                        ✓ Form forwarded to the Principal's inbox via Web3Forms.
+                        ✓ Form forwarded to Guruma's inbox via Web3Forms.
                       </p>
                     ) : (
                       <p className="text-[9px] text-[#FAF9F6]/40 font-sans border-t border-[#D4AF37]/10 pt-2">

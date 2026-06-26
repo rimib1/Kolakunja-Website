@@ -15,7 +15,7 @@ export default function Gallery() {
     : GALLERY_ITEMS.filter(item => item.category === filter);
 
   return (
-    <section id="gallery" className="py-24 bg-[#1a0505] relative">
+    <section id="gallery" className="py-24 bg-[#1b0116] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <span className="text-[#D4AF37] font-sans text-xs font-semibold uppercase tracking-[0.2em] mb-2 block">
@@ -38,8 +38,8 @@ export default function Gallery() {
               onClick={() => setFilter(cat)}
               className={`px-4 sm:px-5 py-2 rounded-full font-sans text-xs sm:text-sm font-semibold transition duration-300 tracking-wide cursor-pointer ${
                 filter === cat
-                  ? 'bg-[#D4AF37] text-[#1a0505] shadow-lg shadow-[#D4AF37]/20'
-                  : 'bg-[#2d0a0a] border border-[#D4AF37]/25 hover:border-[#D4AF37]/60 text-[#FAF9F6]'
+                  ? 'bg-[#D4AF37] text-[#1b0116] shadow-lg shadow-[#D4AF37]/20'
+                  : 'bg-[#2e0527] border border-[#D4AF37]/25 hover:border-[#D4AF37]/60 text-[#FAF9F6]'
               }`}
             >
               {cat}
@@ -62,7 +62,7 @@ export default function Gallery() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.4 }}
-                className="group relative aspect-[4/3] bg-[#260808] rounded-lg overflow-hidden shadow-2xl border border-[#D4AF37]/15 cursor-pointer"
+                className="group relative aspect-[4/3] bg-[#2e0527] rounded-lg overflow-hidden shadow-2xl border border-[#D4AF37]/15 cursor-pointer"
                 onClick={() => setLightboxImage(item.image)}
               >
                 {/* Image */}
@@ -74,7 +74,7 @@ export default function Gallery() {
                 />
 
                 {/* Hover Details Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1a0505]/95 via-[#1a0505]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6" id={`gallery-item-${item.id}`}>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1b0116]/95 via-[#1b0116]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6" id={`gallery-item-${item.id}`}>
                   <span className="text-[#D4AF37] font-sans text-[10px] sm:text-xs font-semibold uppercase tracking-wider mb-1">
                     {item.category}
                   </span>
@@ -120,7 +120,7 @@ export default function Gallery() {
             >
               <button
                 onClick={() => setLightboxImage(null)}
-                className="absolute top-4 right-4 z-20 p-2 rounded-full bg-black/60 hover:bg-[#D4AF37] hover:text-[#1a0505] text-white transition duration-300 cursor-pointer"
+                className="absolute top-4 right-4 z-20 p-2 rounded-full bg-black/60 hover:bg-[#D4AF37] hover:text-[#1b0116] text-white transition duration-300 cursor-pointer"
               >
                 <X className="w-5 h-5" />
               </button>

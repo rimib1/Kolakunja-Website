@@ -49,10 +49,10 @@ export default function DanceStyles() {
   };
 
   return (
-    <section id="styles" className="py-24 bg-[#260808] text-[#FAF9F6] relative">
+    <section id="styles" className="py-24 bg-[#250320] text-[#FAF9F6] relative">
       {/* Decorative Top Border */}
       <div className="absolute top-0 left-0 w-full overflow-hidden leading-none transform rotate-180">
-        <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[30px] fill-[#1a0505]">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[30px] fill-[#1b0116]">
           <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,42.4V0Z" />
         </svg>
       </div>
@@ -81,18 +81,18 @@ export default function DanceStyles() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               whileHover={{ y: -6 }}
-              className="group bg-[#1a0505] rounded-lg overflow-hidden shadow-2xl border border-[#D4AF37]/20 hover:border-[#D4AF37]/60 transition-all duration-300 flex flex-col justify-between"
+              className="group bg-[#1b0116] rounded-lg overflow-hidden shadow-2xl border border-[#D4AF37]/20 hover:border-[#D4AF37]/60 transition-all duration-300 flex flex-col justify-between"
               id={`style-card-${style.id}`}
             >
               {/* Card Image Header */}
-              <div className="relative overflow-hidden aspect-[4/3] bg-maroon-950">
+              <div className="relative overflow-hidden aspect-[4/3] bg-purple-950">
                 <img
                   src={style.image}
                   alt={style.name}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80 group-hover:opacity-100"
                   referrerPolicy="no-referrer"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1a0505] via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1b0116] via-transparent to-transparent" />
                 <div className="absolute bottom-3 left-4 flex items-center space-x-1.5 text-[#D4AF37]">
                   <Sparkles className="w-4 h-4" />
                   <span className="text-xs font-sans tracking-widest font-semibold uppercase">Est. 2023</span>
@@ -133,7 +133,7 @@ export default function DanceStyles() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setSelectedStyle(null)}
-              className="absolute inset-0 bg-[#1a0505]/90 backdrop-blur-sm"
+              className="absolute inset-0 bg-[#1b0116]/90 backdrop-blur-sm"
             />
 
             {/* Modal Body */}
@@ -141,26 +141,26 @@ export default function DanceStyles() {
               initial={{ scale: 0.95, opacity: 0, y: 20 }}
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.95, opacity: 0, y: 20 }}
-              className="relative bg-[#1a0505] w-full max-w-2xl rounded-lg overflow-hidden shadow-2xl z-10 border border-[#D4AF37]/35 max-h-[90vh] overflow-y-auto"
+              className="relative bg-[#1b0116] w-full max-w-2xl rounded-lg overflow-hidden shadow-2xl z-10 border border-[#D4AF37]/35 max-h-[90vh] overflow-y-auto"
               id="style-details-modal"
             >
               {/* Close Button */}
               <button
                 onClick={() => setSelectedStyle(null)}
-                className="absolute top-4 right-4 z-20 p-2 rounded-full bg-black/40 hover:bg-[#D4AF37] hover:text-[#1a0505] text-white transition duration-300"
+                className="absolute top-4 right-4 z-20 p-2 rounded-full bg-black/40 hover:bg-[#D4AF37] hover:text-[#1b0116] text-white transition duration-300"
               >
                 <X className="w-5 h-5" />
               </button>
 
               {/* Modal Banner */}
-              <div className="relative h-48 sm:h-64 bg-maroon-950">
+              <div className="relative h-48 sm:h-64 bg-purple-950">
                 <img
                   src={selectedStyle.image}
                   alt={selectedStyle.name}
                   className="w-full h-full object-cover opacity-70"
                   referrerPolicy="no-referrer"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1a0505] via-[#1a0505]/40 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1b0116] via-[#1b0116]/40 to-transparent" />
                 <div className="absolute bottom-6 left-6 sm:left-8">
                   <span className="text-[#D4AF37] text-xs sm:text-sm font-sans tracking-[0.2em] uppercase font-semibold">
                     Core Dance Offerings
@@ -237,7 +237,7 @@ export default function DanceStyles() {
                 <div className="pt-4 border-t border-[#D4AF37]/20 flex justify-end">
                   <button
                     onClick={() => setSelectedStyle(null)}
-                    className="bg-[#D4AF37] hover:bg-[#FAF9F6] text-[#1a0505] font-sans text-xs font-bold px-6 py-2.5 rounded transition duration-300 tracking-wider uppercase cursor-pointer"
+                    className="bg-[#D4AF37] hover:bg-[#FAF9F6] text-[#1b0116] font-sans text-xs font-bold px-6 py-2.5 rounded transition duration-300 tracking-wider uppercase cursor-pointer"
                   >
                     Got It, Thank You
                   </button>

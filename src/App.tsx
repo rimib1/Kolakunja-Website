@@ -79,7 +79,7 @@ export default function App() {
   };
 
   return (
-    <div className="relative min-h-screen bg-[#1a0505]" id="app-root">
+    <div className="relative min-h-screen bg-[#1b0116]" id="app-root">
       {/* Sticky Top Navbar */}
       <Navbar
         onOpenInquiry={handleOpenInquiry}
@@ -90,7 +90,7 @@ export default function App() {
         {/* Widescreen Hero Header with CTAs */}
         <Hero onOpenInquiry={handleOpenInquiry} />
 
-        {/* Meet Our Principal Rimi Bhowal & About the Academy */}
+        {/* Meet Our Guruma Rimi Bhowal & About the Academy */}
         <About />
 
         {/* Dance Styles Section with syllabus modals */}
@@ -107,16 +107,16 @@ export default function App() {
       </main>
 
       {/* Elegant Classical Footer with Logos, Social Links, and Metadata */}
-      <footer className="bg-[#1a0505] text-[#FAF9F6] pt-20 pb-10 border-t border-[#D4AF37]/25 relative overflow-hidden" id="main-footer">
+      <footer className="bg-[#0d000b] text-[#FAF9F6] pt-20 pb-10 border-t border-[#D4AF37]/25 relative overflow-hidden" id="main-footer">
         {/* Absolute branding glow element */}
         <div className="absolute bottom-0 right-0 w-80 h-80 bg-[#D4AF37]/5 rounded-full blur-2xl pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
-            {/* Column 1: Brand & Principal Description */}
+            {/* Column 1: Brand & Guruma Description */}
             <div className="space-y-6">
               <div className="flex items-center space-x-3">
-                <div className="w-14 h-14 rounded-full overflow-hidden border border-[#D4AF37] bg-[#2d0a0a] shadow">
+                <div className="w-14 h-14 rounded-full overflow-hidden border border-[#D4AF37] bg-[#2e0527] shadow">
                   <img
                     src={academyLogo}
                     alt="Kolakunja Logo"
@@ -198,7 +198,7 @@ export default function App() {
                   target="_blank"
                   rel="noreferrer"
                   className="w-9 h-9 rounded-full bg-[#D4AF37]/10 hover:bg-[#D4AF37]/20 text-[#D4AF37] flex items-center justify-center border border-[#D4AF37]/20 hover:border-[#D4AF37]/50 transition duration-300"
-                  title="Principal Rimi Bhowal Instagram"
+                  title="Guruma Rimi Bhowal Instagram"
                 >
                   <Instagram className="w-4 h-4" />
                 </a>

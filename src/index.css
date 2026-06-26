@@ -38,7 +38,7 @@ html {
 
 body {
   font-family: var(--font-sans);
-  background-color: #1a0505;
+  background-color: #1b0116;
   color: #FAF9F6;
   overflow-x: hidden;
 }
@@ -52,7 +52,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #1a0505;
+  background: #1b0116;
 }
 ::-webkit-scrollbar-thumb {
   background: #D4AF37;
