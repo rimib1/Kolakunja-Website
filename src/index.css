@@ -113,6 +113,12 @@ h1, h2, h3, h4, h5, h6 {
     border-color: #000000 !important;
   }
 
+  /* Keep white text white for elements with solid dark background */
+  #admission-print-sheet-portal .bg-black,
+  #admission-print-sheet-portal .bg-black * {
+    color: #ffffff !important;
+  }
+
   /* Keep the institutional stamp circle looking proper on black and white */
   #admission-print-sheet-portal .border-dashed {
     border-style: dashed !important;
