@@ -74,33 +74,35 @@ h1, h2, h3, h4, h5, h6 {
     print-color-adjust: exact !important;
   }
 
-  /* Hide entire page structure except the print sheet */
-  #app-root, 
-  #main-nav, 
-  #main-footer, 
-  header, 
-  footer, 
-  main, 
-  section, 
-  .print\:hidden {
-    display: none !important;
+  /* Hide entire page contents from view using visibility, avoiding the root "display: none" white screen bug */
+  body * {
+    visibility: hidden !important;
   }
 
-  /* Show and size the printable form sheet */
+  /* Force our printable sheet and all of its descendants to be fully visible and active */
+  #admission-print-sheet, 
+  #admission-print-sheet * {
+    visibility: visible !important;
+  }
+
+  /* Position our printable sheet at the absolute top-left of the physical print canvas */
   #admission-print-sheet {
-    display: block !important;
-    position: fixed !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    position: absolute !important;
     left: 0 !important;
     top: 0 !important;
-    width: 210mm !important; /* A4 width */
-    height: 297mm !important; /* A4 height */
-    padding: 15mm !important;
+    width: 210mm !important; /* Exact A4 Width */
+    height: 297mm !important; /* Exact A4 Height */
+    padding: 10mm 15mm 10mm 15mm !important; /* Balanced inner margins to prevent vertical overflow */
     margin: 0 !important;
     border: none !important;
     box-shadow: none !important;
     background: #ffffff !important;
     color: #000000 !important;
     z-index: 9999999 !important;
+    page-break-inside: avoid !important;
   }
 
   #admission-print-sheet * {

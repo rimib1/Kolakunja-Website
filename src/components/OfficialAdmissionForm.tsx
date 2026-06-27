@@ -22,6 +22,7 @@ export default function OfficialAdmissionForm() {
   });
 
   const printAreaRef = useRef<HTMLDivElement>(null);
+  const [isPrintingBlank, setIsPrintingBlank] = useState(false);
 
   // Capitalize name to Block Letters (Uppercase) automatically or allow typing
   const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -41,8 +42,32 @@ export default function OfficialAdmissionForm() {
   };
 
   const triggerPrint = () => {
-    window.print();
+    setIsPrintingBlank(false);
+    setTimeout(() => {
+      window.print();
+    }, 50);
   };
+
+  const triggerPrintBlank = () => {
+    setIsPrintingBlank(true);
+    setTimeout(() => {
+      window.print();
+      // Safety reset fallback
+      setTimeout(() => {
+        setIsPrintingBlank(false);
+      }, 1000);
+    }, 150);
+  };
+
+  useEffect(() => {
+    const handleAfterPrint = () => {
+      setIsPrintingBlank(false);
+    };
+    window.addEventListener('afterprint', handleAfterPrint);
+    return () => {
+      window.removeEventListener('afterprint', handleAfterPrint);
+    };
+  }, []);
 
   return (
     <div className="space-y-8" id="official-form-container">
@@ -284,15 +309,34 @@ export default function OfficialAdmissionForm() {
               </div>
             </div>
 
-            {/* Print trigger button */}
-            <button
-              onClick={triggerPrint}
-              type="button"
-              className="w-full inline-flex items-center justify-center space-x-2.5 bg-[#D4AF37] hover:bg-[#FAF9F6] text-[#1b0116] font-sans text-xs sm:text-sm font-bold py-3 rounded uppercase tracking-widest cursor-pointer shadow-lg shadow-[#D4AF37]/10 hover:scale-[1.01] transition duration-300"
-            >
-              <Printer className="w-4 h-4" />
-              <span>Print Form / Save PDF</span>
-            </button>
+            {/* Print trigger buttons */}
+            <div className="space-y-3 pt-3 border-t border-[#D4AF37]/10">
+              <button
+                onClick={triggerPrint}
+                type="button"
+                className="w-full inline-flex items-center justify-center space-x-2.5 bg-[#D4AF37] hover:bg-[#FAF9F6] text-[#1b0116] font-sans text-xs sm:text-sm font-bold py-3 rounded uppercase tracking-widest cursor-pointer shadow-lg shadow-[#D4AF37]/10 hover:scale-[1.01] transition duration-300"
+              >
+                <Printer className="w-4 h-4" />
+                <span>1. Print Filled Form / Save PDF</span>
+              </button>
+
+              <button
+                onClick={triggerPrintBlank}
+                type="button"
+                className="w-full inline-flex items-center justify-center space-x-2.5 bg-[#2e0527]/50 hover:bg-[#2e0527]/90 border border-[#D4AF37]/40 hover:border-[#D4AF37] text-[#FAF9F6] font-sans text-xs sm:text-sm font-bold py-3 rounded uppercase tracking-widest cursor-pointer transition duration-300"
+              >
+                <FileText className="w-4 h-4 text-[#D4AF37]" />
+                <span>2. Print Blank Form (Hand-fill)</span>
+              </button>
+
+              {/* Informative Tip */}
+              <div className="p-3 bg-black/25 rounded border border-white/5 text-[10.5px] text-[#FAF9F6]/75 leading-relaxed">
+                <span className="font-bold text-[#D4AF37] block mb-0.5">💡 How to download as PDF:</span>
+                <p>
+                  After clicking, select <strong className="text-white">"Save as PDF"</strong> under the <strong className="text-[#D4AF37]">Destination</strong> dropdown in the print options window to download this form directly onto your device.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -302,11 +346,11 @@ export default function OfficialAdmissionForm() {
             <span>Live Sheet Preview (A4 Layout)</span>
           </span>
 
-          {/* Paper Container Sheet */}
+          {/* Paper Container Sheet - Reduced padding to fit perfectly inside single A4 page height */}
           <div
             ref={printAreaRef}
             id="admission-print-sheet"
-            className="w-full max-w-[620px] aspect-[1/1.414] bg-white text-black p-8 sm:p-10 shadow-2xl relative border-[12px] border-[#D4AF37]/10 flex flex-col justify-between overflow-hidden select-none select-text"
+            className="w-full max-w-[620px] aspect-[1/1.414] bg-white text-black p-6 sm:p-8 shadow-2xl relative border-8 border-[#D4AF37]/10 flex flex-col justify-between overflow-hidden select-none select-text"
             style={{ fontFamily: 'Georgia, serif' }}
           >
             {/* 40% Transparent Background Watermark Logo (Centered) */}
@@ -323,11 +367,11 @@ export default function OfficialAdmissionForm() {
             <div className="absolute inset-2 border border-black/10 pointer-events-none z-10" />
 
             {/* Main Content inside paper */}
-            <div className="relative z-10 space-y-6 flex-grow flex flex-col">
+            <div className="relative z-10 space-y-3.5 flex-grow flex flex-col">
               {/* Header Box */}
-              <div className="text-center border-b-[2px] border-black pb-4 flex flex-col items-center justify-center relative">
+              <div className="text-center border-b-[2px] border-black pb-3.5 flex flex-col items-center justify-center relative">
                 {/* Small Logo at the top */}
-                <div className="w-10 h-10 mb-2">
+                <div className="w-9 h-9 mb-1.5">
                   <img
                     src={logoPath}
                     alt="Logo"
@@ -335,53 +379,53 @@ export default function OfficialAdmissionForm() {
                     referrerPolicy="no-referrer"
                   />
                 </div>
-                <h1 className="text-xl sm:text-2xl font-bold tracking-wider uppercase" style={{ fontFamily: 'Georgia, serif' }}>
+                <h1 className="text-lg sm:text-xl font-bold tracking-wider uppercase" style={{ fontFamily: 'Georgia, serif' }}>
                   Kolakunja Dance Academy
                 </h1>
-                <p className="text-[10px] uppercase font-sans tracking-widest font-semibold text-black/75 mt-0.5">
+                <p className="text-[9.5px] uppercase font-sans tracking-widest font-semibold text-black/75 mt-0.5">
                   An Institution of Kathak & Odissi Dance
                 </p>
-                <p className="text-[8px] font-sans tracking-wide text-black/60 italic mt-0.5">
+                <p className="text-[7.5px] font-sans tracking-wide text-black/60 italic mt-0.5">
                   Regd Office: Agarpara & Lauberia (Birbhum) | Contact: +91 80171 17152
                 </p>
                 
                 {/* Registration Number placeholder */}
-                <div className="absolute top-0 left-0 text-[8px] font-sans text-black/40">
+                <div className="absolute top-0 left-0 text-[7.5px] font-sans text-black/40">
                   FORM NO: KDA/{new Date().getFullYear()}/{Math.floor(1000 + Math.random() * 9000)}
                 </div>
               </div>
 
               {/* Title of the Form */}
-              <div className="text-center py-1">
-                <span className="border-2 border-black px-4 py-1 text-xs uppercase font-sans font-black tracking-widest bg-black text-white">
+              <div className="text-center py-0.5">
+                <span className="border-2 border-black px-4 py-0.5 text-[11px] uppercase font-sans font-black tracking-widest bg-black text-white">
                   Application for Admission
                 </span>
               </div>
 
               {/* Passport Photo Frame (Absolute placed top-right-ish inside sheet) */}
-              <div className="flex justify-between items-start mt-2">
-                <div className="text-[10px] font-sans text-black/50 space-y-1 bg-black/5 p-2 rounded max-w-[200px]">
-                  <p className="font-semibold">INSTRUCTIONS:</p>
-                  <p>1. Fill details in uppercase.</p>
-                  <p>2. Bring signed copy to induction.</p>
-                  <p>3. Attach listed documents.</p>
+              <div className="flex justify-between items-start mt-1">
+                <div className="text-[9px] sm:text-[9.5px] font-sans text-black/50 space-y-0.5 bg-black/5 p-2 rounded max-w-[210px] leading-normal">
+                  <p className="font-bold text-black/70">INSTRUCTIONS FOR APPLICANT:</p>
+                  <p>1. Fill out details in UPPERCASE/BLOCK LETTERS.</p>
+                  <p>2. Bring printed and signed copy to induction batch.</p>
+                  <p>3. Attach self-attested documents listed below.</p>
                 </div>
 
-                <div className="w-[100px] h-[120px] border-2 border-dashed border-black/40 flex flex-col items-center justify-center bg-gray-50/50 p-2 text-center relative flex-shrink-0">
-                  <span className="text-[8px] font-sans text-black/50 uppercase leading-normal font-bold">
-                    Affix Recent Passport Size Photo Here
+                <div className="w-[85px] h-[105px] border-2 border-dashed border-black/30 flex flex-col items-center justify-center bg-gray-50/50 p-1.5 text-center relative flex-shrink-0">
+                  <span className="text-[7.5px] font-sans text-black/50 uppercase leading-normal font-bold">
+                    Affix Recent Passport Size Photo
                   </span>
-                  <div className="absolute bottom-1 right-1 text-[6px] font-sans text-black/25">2x2 inch</div>
+                  <div className="absolute bottom-1 right-1 text-[5px] font-sans text-black/25">2x2 inch</div>
                 </div>
               </div>
 
-              {/* Form Grid Details - Classical lined layout */}
-              <div className="space-y-4 text-xs">
+              {/* Form Grid Details - Classical lined layout with tightened space-y */}
+              <div className="space-y-2.5 text-xs">
                 {/* 1. Student Name */}
                 <div className="flex items-end pb-1 border-b border-black/15">
                   <span className="font-bold uppercase tracking-wider text-[10px] w-48 flex-shrink-0">1. Student's Name:</span>
                   <span className="flex-grow font-sans text-xs tracking-wider uppercase font-black pl-2">
-                    {formData.studentName || '__________________________________________'}
+                    {isPrintingBlank ? '__________________________________________' : (formData.studentName || '__________________________________________')}
                   </span>
                 </div>
 
@@ -389,7 +433,7 @@ export default function OfficialAdmissionForm() {
                 <div className="flex items-end pb-1 border-b border-black/15">
                   <span className="font-bold uppercase tracking-wider text-[10px] w-48 flex-shrink-0">2. Father's Name:</span>
                   <span className="flex-grow font-serif text-xs italic pl-2">
-                    {formData.fatherName || '__________________________________________'}
+                    {isPrintingBlank ? '__________________________________________' : (formData.fatherName || '__________________________________________')}
                   </span>
                 </div>
 
@@ -397,7 +441,7 @@ export default function OfficialAdmissionForm() {
                 <div className="flex items-end pb-1 border-b border-black/15">
                   <span className="font-bold uppercase tracking-wider text-[10px] w-48 flex-shrink-0">3. Mother's Name:</span>
                   <span className="flex-grow font-serif text-xs italic pl-2">
-                    {formData.motherName || '__________________________________________'}
+                    {isPrintingBlank ? '__________________________________________' : (formData.motherName || '__________________________________________')}
                   </span>
                 </div>
 
@@ -406,13 +450,13 @@ export default function OfficialAdmissionForm() {
                   <div className="flex items-end pb-1 border-b border-black/15">
                     <span className="font-bold uppercase tracking-wider text-[10px] w-24 flex-shrink-0">4. Date of Birth:</span>
                     <span className="flex-grow font-sans text-xs font-semibold pl-2">
-                      {formData.dob ? new Date(formData.dob).toLocaleDateString('en-IN', { day: '2-digit', month: '2-digit', year: 'numeric' }) : '___/___/______'}
+                      {isPrintingBlank ? '___/___/______' : (formData.dob ? new Date(formData.dob).toLocaleDateString('en-IN', { day: '2-digit', month: '2-digit', year: 'numeric' }) : '___/___/______')}
                     </span>
                   </div>
                   <div className="flex items-end pb-1 border-b border-black/15">
                     <span className="font-bold uppercase tracking-wider text-[10px] w-20 flex-shrink-0">5. Nationality:</span>
                     <span className="flex-grow font-serif text-xs pl-2">
-                      {formData.nationality || 'Indian'}
+                      {isPrintingBlank ? 'Indian' : (formData.nationality || 'Indian')}
                     </span>
                   </div>
                 </div>
@@ -420,8 +464,8 @@ export default function OfficialAdmissionForm() {
                 {/* 5. Address */}
                 <div className="flex items-start pb-1 border-b border-black/15">
                   <span className="font-bold uppercase tracking-wider text-[10px] w-48 flex-shrink-0 mt-0.5">6. Address:</span>
-                  <span className="flex-grow font-serif text-xs leading-normal pl-2 min-h-[32px] break-words">
-                    {formData.address || '____________________________________________________________________'}
+                  <span className="flex-grow font-serif text-xs leading-normal pl-2 min-h-[28px] break-words">
+                    {isPrintingBlank ? '____________________________________________________________________' : (formData.address || '____________________________________________________________________')}
                   </span>
                 </div>
 
@@ -430,13 +474,13 @@ export default function OfficialAdmissionForm() {
                   <div className="flex items-end pb-1 border-b border-black/15">
                     <span className="font-bold uppercase tracking-wider text-[10px] w-24 flex-shrink-0">7. Contact No:</span>
                     <span className="flex-grow font-sans text-xs font-bold pl-2">
-                      {formData.contactNumber || '____________________'}
+                      {isPrintingBlank ? '____________________' : (formData.contactNumber || '____________________')}
                     </span>
                   </div>
                   <div className="flex items-end pb-1 border-b border-black/15">
                     <span className="font-bold uppercase tracking-wider text-[10px] w-20 flex-shrink-0">8. Religion:</span>
                     <span className="flex-grow font-serif text-xs pl-2">
-                      {formData.religion || '____________________'}
+                      {isPrintingBlank ? '____________________' : (formData.religion || '____________________')}
                     </span>
                   </div>
                 </div>
@@ -445,7 +489,7 @@ export default function OfficialAdmissionForm() {
                 <div className="flex items-end pb-1 border-b border-black/15">
                   <span className="font-bold uppercase tracking-wider text-[10px] w-48 flex-shrink-0">9. Educational Qualification:</span>
                   <span className="flex-grow font-serif text-xs pl-2">
-                    {formData.educationalQualification || '__________________________________________'}
+                    {isPrintingBlank ? '__________________________________________' : (formData.educationalQualification || '__________________________________________')}
                   </span>
                 </div>
 
@@ -454,13 +498,13 @@ export default function OfficialAdmissionForm() {
                   <div className="flex items-end pb-1 border-b border-black/15">
                     <span className="font-bold uppercase tracking-wider text-[10px] w-32 flex-shrink-0">10. Subject:</span>
                     <span className="flex-grow font-sans text-xs font-bold text-red-900 uppercase pl-2">
-                      {formData.subjectOfAdmission}
+                      {isPrintingBlank ? '____________________' : formData.subjectOfAdmission}
                     </span>
                   </div>
                   <div className="flex items-end pb-1 border-b border-black/15">
                     <span className="font-bold uppercase tracking-wider text-[10px] w-32 flex-shrink-0">11. Date of Admission:</span>
                     <span className="flex-grow font-sans text-xs font-semibold pl-2">
-                      {formData.dateOfAdmission ? new Date(formData.dateOfAdmission).toLocaleDateString('en-IN', { day: '2-digit', month: '2-digit', year: 'numeric' }) : '___/___/______'}
+                      {isPrintingBlank ? '___/___/______' : (formData.dateOfAdmission ? new Date(formData.dateOfAdmission).toLocaleDateString('en-IN', { day: '2-digit', month: '2-digit', year: 'numeric' }) : '___/___/______')}
                     </span>
                   </div>
                 </div>
@@ -469,24 +513,24 @@ export default function OfficialAdmissionForm() {
                 <div className="flex items-end pb-1 border-b border-black/15">
                   <span className="font-bold uppercase tracking-wider text-[10px] w-48 flex-shrink-0">12. Previous Experience:</span>
                   <span className="flex-grow font-serif text-xs pl-2">
-                    {formData.previousExperience || 'None'}
+                    {isPrintingBlank ? '__________________________________________' : (formData.previousExperience || 'None')}
                   </span>
                 </div>
               </div>
 
               {/* Checklist & Document Declaration in Receipt */}
-              <div className="border border-black/30 p-3 bg-black/[0.02] rounded space-y-2 mt-2">
+              <div className="border border-black/30 p-2.5 bg-black/[0.02] rounded space-y-1.5 mt-1.5">
                 <p className="font-bold uppercase tracking-wider text-[9px] text-black">Documents Submitted Checklists:</p>
                 <div className="grid grid-cols-2 gap-2 text-[9px] font-sans">
                   <div className="flex items-center space-x-2">
-                    <span className={`w-3.5 h-3.5 border border-black flex items-center justify-center font-bold text-[8px] ${formData.docAadhar ? 'bg-black text-white' : ''}`}>
-                      {formData.docAadhar ? '✓' : ''}
+                    <span className={`w-3.5 h-3.5 border border-black flex items-center justify-center font-bold text-[8px] ${(isPrintingBlank ? false : formData.docAadhar) ? 'bg-black text-white' : ''}`}>
+                      {(isPrintingBlank ? false : formData.docAadhar) ? '✓' : ''}
                     </span>
                     <span className="text-black/85">1 Copy of Aadhaar Card</span>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <span className={`w-3.5 h-3.5 border border-black flex items-center justify-center font-bold text-[8px] ${formData.docPhotos ? 'bg-black text-white' : ''}`}>
-                      {formData.docPhotos ? '✓' : ''}
+                    <span className={`w-3.5 h-3.5 border border-black flex items-center justify-center font-bold text-[8px] ${(isPrintingBlank ? false : formData.docPhotos) ? 'bg-black text-white' : ''}`}>
+                      {(isPrintingBlank ? false : formData.docPhotos) ? '✓' : ''}
                     </span>
                     <span className="text-black/85">2 Passport Size Colour Photos</span>
                   </div>
@@ -498,23 +542,23 @@ export default function OfficialAdmissionForm() {
             </div>
 
             {/* Footer Signature Box - 4 Columns */}
-            <div className="grid grid-cols-4 gap-2 pt-10 text-center relative z-10">
-              <div className="flex flex-col justify-end items-center h-16">
+            <div className="grid grid-cols-4 gap-2 pt-6 text-center relative z-10">
+              <div className="flex flex-col justify-end items-center h-12">
                 <div className="w-full border-t border-black/40 pt-1.5">
                   <p className="text-[8px] uppercase tracking-wider font-sans font-bold">Student's Sign</p>
                 </div>
               </div>
-              <div className="flex flex-col justify-end items-center h-16">
+              <div className="flex flex-col justify-end items-center h-12">
                 <div className="w-full border-t border-black/40 pt-1.5">
                   <p className="text-[8px] uppercase tracking-wider font-sans font-bold">Guardian's Sign</p>
                 </div>
               </div>
-              <div className="flex flex-col justify-end items-center h-16">
+              <div className="flex flex-col justify-end items-center h-12">
                 <div className="w-full border-t border-black/40 pt-1.5">
                   <p className="text-[8px] uppercase tracking-wider font-sans font-bold text-red-950">Signature of GuruMaa</p>
                 </div>
               </div>
-              <div className="flex flex-col justify-between items-center h-16 relative">
+              <div className="flex flex-col justify-between items-center h-12 relative">
                 {/* Institutional Stamp circle design */}
                 <div className="absolute top-[-22px] w-[50px] h-[50px] rounded-full border-2 border-dashed border-[#D4AF37]/50 flex items-center justify-center opacity-45 pointer-events-none rotate-12">
                   <div className="text-[6px] font-sans font-black text-center text-[#D4AF37] leading-[7px]">

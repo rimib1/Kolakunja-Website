@@ -11,6 +11,9 @@ import image_612371681 from './assets/images/612371681_1468984158572829_40469697
 import image_530610933 from './assets/images/530610933_1335943155210264_4133410140756325542_n.jpg';
 import poster_1 from './assets/images/poster-1.jpg';
 import poster_ from './assets/images/poster_.jpg';
+import dsc_0158 from './assets/images/dsc_0158.jpg';
+import img_wa0113 from './assets/images/img_wa0113.jpg';
+import titas_3 from './assets/images/titas_3.jpeg';
 
 export const DANCE_STYLES: DanceStyle[] = [
   {
@@ -63,6 +66,24 @@ export const BRANCHES: Branch[] = [
 ];
 
 export const GALLERY_ITEMS: GalleryItem[] = [
+  {
+    id: 'g_dsc_0158',
+    title: 'Guruma Rimi Bhowal - Classical Odissi Solo',
+    category: 'Stage Performances',
+    image: dsc_0158
+  },
+  {
+    id: 'g_titas_3',
+    title: 'Titas & Senior Group Classical Choreography',
+    category: 'Stage Performances',
+    image: titas_3
+  },
+  {
+    id: 'g_img_wa0113',
+    title: 'Kolakunja Classroom Training & Mudra Practice',
+    category: 'Workshops',
+    image: img_wa0113
+  },
   {
     id: 'g1',
     title: 'Kolakunja Classical Stage Showcase',

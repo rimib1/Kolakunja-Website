@@ -5,6 +5,7 @@ import { Award, Users, Heart, GraduationCap, Calendar, Sparkles, ChevronLeft, Ch
 // Import images as ES modules so Vite compiles/hashes them for production
 import rimi_b6 from '../assets/images/rimi_b6.jpg';
 import rimi_b2 from '../assets/images/rimi_b2.jpg';
+import dsc_0158 from '../assets/images/dsc_0158.jpg';
 
 export default function About() {
   const [currentPhoto, setCurrentPhoto] = useState(0);
@@ -13,6 +14,10 @@ export default function About() {
     {
       url: rimi_b6,
       alt: 'Rimi Bhowal - Guruma of Kolakunja Dance Academy'
+    },
+    {
+      url: dsc_0158,
+      alt: 'Rimi Bhowal - Odissi Classical Performance Solo'
     },
     {
       url: rimi_b2,

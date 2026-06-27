@@ -8,6 +8,7 @@ import rimi_b3 from '../assets/images/rimi_b3.jpg';
 import rimi_b4 from '../assets/images/rimi_b4.jpg';
 import rimi_b5 from '../assets/images/rimi_b5.jpg';
 import poster_ from '../assets/images/poster_.jpg';
+import dsc_0158 from '../assets/images/dsc_0158.jpg';
 
 interface HeroProps {
   onOpenInquiry: () => void;
@@ -17,6 +18,10 @@ export default function Hero({ onOpenInquiry }: HeroProps) {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const slides = [
+    {
+      url: dsc_0158,
+      alt: 'Guruma Rimi Bhowal - Classical Odissi Solo'
+    },
     {
       url: poster1,
       alt: 'Kolakunja Classical Dance Academy Stage Event Poster'
