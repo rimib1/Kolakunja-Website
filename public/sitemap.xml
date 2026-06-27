@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Main Home Page of Kolakunja Dance Academy -->
+  <url>
+    <loc>https://ais-pre-ofatacyjvpcwlubjznkcct-972593581434.asia-east1.run.app/</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <!-- Main Home Section Anchor link -->
+  <url>
+    <loc>https://ais-pre-ofatacyjvpcwlubjznkcct-972593581434.asia-east1.run.app/#home</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- About Guru Maa Rimi Bhowal & Dance Academy -->
+  <url>
+    <loc>https://ais-pre-ofatacyjvpcwlubjznkcct-972593581434.asia-east1.run.app/#about</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Dance Styles & Syllabi (Kathak, Odissi, Folk, Rabindra Nritya) -->
+  <url>
+    <loc>https://ais-pre-ofatacyjvpcwlubjznkcct-972593581434.asia-east1.run.app/#styles</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Branch Locations (Agarpara & Birbhum) -->
+  <url>
+    <loc>https://ais-pre-ofatacyjvpcwlubjznkcct-972593581434.asia-east1.run.app/#branches</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Photo & Video Gallery of Moments -->
+  <url>
+    <loc>https://ais-pre-ofatacyjvpcwlubjznkcct-972593581434.asia-east1.run.app/#gallery</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Online Admissions & Contact Portal -->
+  <url>
+    <loc>https://ais-pre-ofatacyjvpcwlubjznkcct-972593581434.asia-east1.run.app/#inquiry</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+</urlset>
