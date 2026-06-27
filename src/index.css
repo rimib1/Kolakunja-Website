@@ -62,31 +62,32 @@ h1, h2, h3, h4, h5, h6 {
   background: #f2c735;
 }
 
+/* Hide print portal copy in screen mode */
+#admission-print-sheet-portal {
+  display: none !important;
+}
+
 /* Professional Print Styles for the Admission Form Sheet */
 @media print {
+  /* Hide the normal React root completely so we have absolutely 0 other pages/white screen */
+  #root {
+    display: none !important;
+  }
+
   html, body {
     background-color: #ffffff !important;
     background-image: none !important;
     color: #000000 !important;
     margin: 0 !important;
     padding: 0 !important;
+    height: 100% !important;
+    overflow: hidden !important;
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
   }
 
-  /* Hide entire page contents from view using visibility, avoiding the root "display: none" white screen bug */
-  body * {
-    visibility: hidden !important;
-  }
-
-  /* Force our printable sheet and all of its descendants to be fully visible and active */
-  #admission-print-sheet, 
-  #admission-print-sheet * {
-    visibility: visible !important;
-  }
-
-  /* Position our printable sheet at the absolute top-left of the physical print canvas */
-  #admission-print-sheet {
+  /* Show and size the printable form sheet at body level */
+  #admission-print-sheet-portal {
     display: flex !important;
     flex-direction: column !important;
     justify-content: space-between !important;
@@ -101,22 +102,24 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: none !important;
     background: #ffffff !important;
     color: #000000 !important;
-    z-index: 9999999 !important;
+    z-index: 99999999 !important;
     page-break-inside: avoid !important;
   }
 
-  #admission-print-sheet * {
+  #admission-print-sheet-portal * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
     color: #000000 !important;
     border-color: #000000 !important;
   }
 
   /* Keep the institutional stamp circle looking proper on black and white */
-  #admission-print-sheet .border-dashed {
+  #admission-print-sheet-portal .border-dashed {
     border-style: dashed !important;
     border-color: #333333 !important;
   }
 
-  #admission-print-sheet .text-\[\#D4AF37\] {
+  #admission-print-sheet-portal .text-\[\#D4AF37\] {
     color: #333333 !important;
   }
 
