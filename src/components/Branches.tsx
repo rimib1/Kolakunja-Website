@@ -4,7 +4,10 @@ import { MapPin, Phone, Mail, Calendar, HelpCircle, ArrowUpRight } from 'lucide-
 import { BRANCHES } from '../data';
 
 const getWhatsAppLink = (branchName: string, phone: string) => {
-  const cleanPhone = phone.replace(/[^\d]/g, ''); // removes +, spaces, and dashes
+  let cleanPhone = phone.replace(/[^\d]/g, ''); // removes +, spaces, and dashes
+  if (cleanPhone.length === 10) {
+    cleanPhone = '91' + cleanPhone;
+  }
   const message = `Hello, I am interested in joining the ${branchName} of Kolakunja Dance Academy. Could you please share more details about the batches and fee structure?`;
   return `https://wa.me/${cleanPhone}?text=${encodeURIComponent(message)}`;
 };
@@ -90,10 +93,13 @@ export default function Branches() {
                   <Phone className="w-4 h-4 flex-shrink-0" />
                   <span className="font-sans font-medium">{branch.phone}</span>
                 </a>
-                <div className="flex items-center space-x-2.5 text-xs sm:text-sm text-[#FAF9F6]/75">
+                <a
+                  href="mailto:rimi.bhowal1990@gmail.com"
+                  className="flex items-center space-x-2.5 text-xs sm:text-sm text-[#FAF9F6]/75 hover:text-[#D4AF37] transition duration-300"
+                >
                   <Mail className="w-4 h-4 flex-shrink-0" />
-                  <span className="font-sans font-light truncate">kolakunjarimi.bhattacharyya@gmail.com</span>
-                </div>
+                  <span className="font-sans font-light truncate">rimi.bhowal1990@gmail.com</span>
+                </a>
 
                 <div className="pt-3">
                   <a

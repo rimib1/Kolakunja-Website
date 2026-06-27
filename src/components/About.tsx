@@ -5,7 +5,7 @@ import { Award, Users, Heart, GraduationCap, Calendar, Sparkles, ChevronLeft, Ch
 // Import images as ES modules so Vite compiles/hashes them for production
 import rimi_b6 from '../assets/images/rimi_b6.jpg';
 import rimi_b2 from '../assets/images/rimi_b2.jpg';
-import dsc_0158 from '../assets/images/dsc_0158.jpg';
+import titas_3 from '../assets/images/titas_3.jpeg';
 
 export default function About() {
   const [currentPhoto, setCurrentPhoto] = useState(0);
@@ -13,11 +13,11 @@ export default function About() {
   const gurumaPhotos = [
     {
       url: rimi_b6,
-      alt: 'Rimi Bhowal - Guruma of Kolakunja Dance Academy'
+      alt: 'Rimi Bhowal - Gurumaa of Kolakunja Dance Academy'
     },
     {
-      url: dsc_0158,
-      alt: 'Rimi Bhowal - Odissi Classical Performance Solo'
+      url: titas_3,
+      alt: 'Rimi Bhowal - Gurumaa Special Recital'
     },
     {
       url: rimi_b2,
@@ -59,7 +59,7 @@ export default function About() {
             Guiding Light of Kolakunja
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-white tracking-tight">
-            Meet Our Guruma
+            Meet Our Gurumaa
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent mx-auto mt-4" />
         </div>
@@ -134,7 +134,7 @@ export default function About() {
                   <div>
                     <h3 className="font-serif text-lg font-bold text-[#D4AF37]">Rimi Bhowal</h3>
                     <p className="text-[11px] font-sans text-[#FAF9F6]/80 font-medium tracking-wide">
-                      Founder & Guruma, Kolakunja Dance Academy
+                      Founder & Gurumaa, Kolakunja Dance Academy
                     </p>
                   </div>
                   <div className="flex space-x-2 flex-shrink-0">
@@ -185,7 +185,7 @@ export default function About() {
               </h3>
               
               <p className="text-[#FAF9F6]/80 text-sm sm:text-base leading-relaxed font-sans font-light">
-                Since founding Kolakunja Dance Academy in <strong>June 2023</strong>, 
+                Since founding Kolakunja Dance Academy in <strong>Jan 2016</strong>, 
                 <strong> Rimi Bhowal</strong> has dedicated her artistic journey to imparting 
                 the pristine heritage of classical Indian dance. Rooted in her prestigious educational 
                 credentials from the <strong>University of Calcutta</strong>, her instruction goes 
@@ -229,7 +229,7 @@ export default function About() {
               ))}
             </div>
 
-            {/* Quote of Guruma */}
+            {/* Quote of Gurumaa */}
             <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -238,7 +238,7 @@ export default function About() {
               className="border-l-4 border-[#D4AF37] pl-4 py-1 italic text-[#FAF9F6]/90 text-sm font-serif leading-relaxed bg-[#D4AF37]/5 rounded-r"
             >
               "Dance is not just movement; it is a sacred offering, a conversation between the soul and the divine. At Kolakunja, we don't just teach steps, we nurture a lifelong passion."
-              <span className="block mt-1.5 font-sans font-semibold text-[11px] uppercase tracking-wider text-[#D4AF37]">— Guruma Rimi Bhowal</span>
+              <span className="block mt-1.5 font-sans font-semibold text-[11px] uppercase tracking-wider text-[#D4AF37]">— Gurumaa Rimi Bhowal</span>
             </motion.div>
           </div>
         </div>

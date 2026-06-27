@@ -240,7 +240,7 @@ function AdmissionSheet({ formData, isPrintingBlank, isPrintCopy, logoPath, form
         </div>
         <div className="flex flex-col justify-end items-center h-12">
           <div className="w-full border-t border-black/40 pt-1.5">
-            <p className="text-[8px] uppercase tracking-wider font-sans font-bold text-red-950">Signature of GuruMaa</p>
+            <p className="text-[8px] uppercase tracking-wider font-sans font-bold text-red-950">Signature of Gurumaa</p>
           </div>
         </div>
         <div className="flex flex-col justify-between items-center h-12 relative">
@@ -338,7 +338,7 @@ export default function OfficialAdmissionForm() {
           <p className="font-semibold text-[#D4AF37]">Official Admission Form Generator</p>
           <p className="text-[#FAF9F6]/80 leading-relaxed">
             Fill out the fields below to instantly generate your official, pre-filled Kolakunja admission form. 
-            Once completed, click the <strong className="text-[#D4AF37]">Print Form / Save PDF</strong> button to print it or download it as a high-quality PDF. Please sign the physical copy and submit it to Guruma Rimi Bhowal during your batch induction.
+            Once completed, click the <strong className="text-[#D4AF37]">Print Form / Save PDF</strong> button to print it or download it as a high-quality PDF. Please sign the physical copy and submit it to Gurumaa Rimi Bhowal during your batch induction.
           </p>
         </div>
       </div>

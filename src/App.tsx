@@ -90,7 +90,7 @@ export default function App() {
         {/* Widescreen Hero Header with CTAs */}
         <Hero onOpenInquiry={handleOpenInquiry} />
 
-        {/* Meet Our Guruma Rimi Bhowal & About the Academy */}
+        {/* Meet Our Gurumaa Rimi Bhowal & About the Academy */}
         <About />
 
         {/* Dance Styles Section with syllabus modals */}
@@ -113,7 +113,7 @@ export default function App() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
-            {/* Column 1: Brand & Guruma Description */}
+            {/* Column 1: Brand & Gurumaa Description */}
             <div className="space-y-6">
               <div className="flex items-center space-x-3">
                 <div className="w-14 h-14 rounded-full overflow-hidden border border-[#D4AF37] bg-[#2e0527] shadow">
@@ -174,9 +174,9 @@ export default function App() {
                 Connect With Us
               </h4>
               <div className="space-y-3 text-xs text-[#FAF9F6]/75 font-sans">
-                <a href="mailto:kolakunjarimi.bhattacharyya@gmail.com" className="flex items-center space-x-2.5 hover:text-[#D4AF37] transition">
+                <a href="mailto:rimi.bhowal1990@gmail.com" className="flex items-center space-x-2.5 hover:text-[#D4AF37] transition">
                   <Mail className="w-4.5 h-4.5 text-[#D4AF37] flex-shrink-0" />
-                  <span className="truncate">kolakunjarimi.bhattacharyya@gmail.com</span>
+                  <span className="truncate">rimi.bhowal1990@gmail.com</span>
                 </a>
                 <a href="tel:+918017117152" className="flex items-center space-x-2.5 hover:text-[#D4AF37] transition">
                   <Phone className="w-4.5 h-4.5 text-[#D4AF37] flex-shrink-0" />
@@ -198,7 +198,7 @@ export default function App() {
                   target="_blank"
                   rel="noreferrer"
                   className="w-9 h-9 rounded-full bg-[#D4AF37]/10 hover:bg-[#D4AF37]/20 text-[#D4AF37] flex items-center justify-center border border-[#D4AF37]/20 hover:border-[#D4AF37]/50 transition duration-300"
-                  title="Guruma Rimi Bhowal Instagram"
+                  title="Gurumaa Rimi Bhowal Instagram"
                 >
                   <Instagram className="w-4 h-4" />
                 </a>

@@ -10,6 +10,15 @@ import rimi_b5 from '../assets/images/rimi_b5.jpg';
 import poster_ from '../assets/images/poster_.jpg';
 import dsc_0158 from '../assets/images/dsc_0158.jpg';
 
+// New uploaded images
+import first_img from '../assets/images/FIRST.jpg';
+import dsc03912 from '../assets/images/DSC03912.jpg';
+import dsc03916 from '../assets/images/DSC03916.jpg';
+import dsc03937 from '../assets/images/DSC03937.jpg';
+import dsc03950 from '../assets/images/DSC03950.jpg';
+import dsc04562 from '../assets/images/DSC04562.jpg';
+import img_wa0113_new from '../assets/images/IMG_20260105_WA0113.jpg';
+
 interface HeroProps {
   onOpenInquiry: () => void;
 }
@@ -19,12 +28,36 @@ export default function Hero({ onOpenInquiry }: HeroProps) {
 
   const slides = [
     {
-      url: dsc_0158,
-      alt: 'Guruma Rimi Bhowal - Classical Odissi Solo'
+      url: first_img,
+      alt: 'Kolakunja Classical Dance Performance - First Showcase'
     },
     {
-      url: poster1,
-      alt: 'Kolakunja Classical Dance Academy Stage Event Poster'
+      url: dsc_0158,
+      alt: 'Gurumaa Rimi Bhowal - Classical Odissi Solo'
+    },
+    {
+      url: dsc03912,
+      alt: 'Kolakunja Academy Beautiful Classical Dance Performance'
+    },
+    {
+      url: dsc03916,
+      alt: 'Elegant Classical Mudras and Expressions'
+    },
+    {
+      url: dsc03937,
+      alt: 'Graceful Traditional Dance Showcase'
+    },
+    {
+      url: dsc03950,
+      alt: 'Vibrant Stage Choreography and Costumes'
+    },
+    {
+      url: dsc04562,
+      alt: 'Nurturing Timeless Indian Classical Heritage'
+    },
+    {
+      url: img_wa0113_new,
+      alt: 'Kolakunja Classroom Training & Mudra Practice'
     },
     {
       url: rimi_b3,
@@ -37,10 +70,6 @@ export default function Hero({ onOpenInquiry }: HeroProps) {
     {
       url: rimi_b5,
       alt: 'Rimi Bhowal performing on Stage with traditional jewelry'
-    },
-    {
-      url: poster_,
-      alt: 'Kolakunja Dance Academy Cultural Festival Poster'
     }
   ];
 
@@ -52,7 +81,7 @@ export default function Hero({ onOpenInquiry }: HeroProps) {
   }, [slides.length]);
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black pt-16">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black pt-28 sm:pt-32">
       {/* Background Image with Dark Vignette Overlay */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <AnimatePresence initial={false}>
@@ -61,10 +90,10 @@ export default function Hero({ onOpenInquiry }: HeroProps) {
             src={slides[currentSlide].url}
             alt={slides[currentSlide].alt}
             initial={{ opacity: 0, scale: 1.05 }}
-            animate={{ opacity: 0.45, scale: 1 }}
+            animate={{ opacity: 0.87, scale: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 1.2, ease: "easeInOut" }}
-            className="w-full h-full object-cover object-center absolute inset-0"
+            className={`w-full h-full object-cover absolute inset-0 ${(slides[currentSlide].url === rimi_b5 || slides[currentSlide].url === dsc03912) ? 'object-top' : 'object-center'}`}
             referrerPolicy="no-referrer"
           />
         </AnimatePresence>
@@ -121,7 +150,7 @@ export default function Hero({ onOpenInquiry }: HeroProps) {
           transition={{ duration: 1, delay: 0.5 }}
           className="max-w-2xl mx-auto text-base sm:text-lg md:text-xl text-[#FAF9F6]/85 font-sans font-light leading-relaxed mb-8 px-2"
         >
-          Welcome to <strong className="font-semibold text-[#D4AF37] text-glow">Kolakunja Dance Academy</strong>, nurturing the timeless arts of Kathak, Odissi, Folk, and Creative Dance under the guidance of our esteemed Guruma Rimi Bhowal.
+          Welcome to <strong className="font-semibold text-[#D4AF37] text-glow">Kolakunja Dance Academy</strong>, nurturing the timeless arts of Kathak, Odissi, Folk, and Creative Dance under the guidance of our esteemed Gurumaa Rimi Bhowal.
         </motion.p>
 
         {/* Founder Tagline */}

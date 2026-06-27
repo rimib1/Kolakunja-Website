@@ -15,63 +15,70 @@ import dsc_0158 from './assets/images/dsc_0158.jpg';
 import img_wa0113 from './assets/images/img_wa0113.jpg';
 import titas_3 from './assets/images/titas_3.jpeg';
 
+import kathak_img from './assets/images/kathak.jpeg';
+import odisi_img from './assets/images/odisi.jpeg';
+import folk_dance_img from './assets/images/folk_dance.jpeg';
+import creative_img from './assets/images/creative.jpg';
+
 export const DANCE_STYLES: DanceStyle[] = [
   {
     id: 'kathak',
     name: 'Kathak',
     description: 'The rhythmic footwork and storytelling elegance.',
     details: 'Originating from the nomadic bards of ancient northern India, Kathak is a mesmerizing dance form characterized by intricate footwork (Tatkar), rapid spins (Chakkars), and expressive storytelling through hand gestures (Mudras) and facial expressions (Abhinaya). Training includes mastery over rhythmic cycles (Taals) and speed variations.',
-    image: rimi_b3
+    image: kathak_img
   },
   {
     id: 'odissi',
     name: 'Odissi',
     description: 'The fluid sculpturesque poses and spiritual grace.',
     details: 'Hailing from the ancient temples of Odisha, Odissi is famous for its lyrical grace and unique body postures, particularly the Tribhanga (three-bend posture) and the Chowka (square stance resembling Lord Jagannath). Students learn to embody temple sculptures brought to life, blending intense devotion with fluid, poetic movements.',
-    image: rimi_b4
+    image: odisi_img
   },
   {
     id: 'folk',
     name: 'Folk Dance',
     description: 'Celebrating vibrant regional traditions and joyful rhythms.',
     details: 'Indian folk dances are a celebration of life, seasons, and festivals. We offer training in various colorful folk dances of India (including Rabindra Nritya, Bengali Folk, and energetic regional styles). This style emphasizes high-energy movements, community bonding, traditional rhythm patterns, and theatrical group storytelling.',
-    image: image_492006963
+    image: folk_dance_img
   },
   {
     id: 'creative',
     name: 'Creative Dance',
     description: 'Blending contemporary expressions with traditional roots.',
     details: 'Our Creative Dance module merges the discipline of classical Indian dance grammar with modern, contemporary, and free-flowing expressive movements. It allows students to explore innovative themes, self-choreography, and physical storytelling, creating a bridges between age-old traditions and modern-day expressions.',
-    image: image_612151920
+    image: creative_img
   }
 ];
 
 export const BRANCHES: Branch[] = [
   {
     id: 'agarpara',
-    name: 'Agarpara Branch (Guruma)',
+    name: 'Main Branch (Agarpara, Kolkata)',
     address: 'Anima Apartment Ground Floor, Ellias Road, Agarpara, Kolkata, West Bengal, India, 700058',
     status: 'Active',
-    tagline: 'Our premier state-of-the-art facility featuring spacious mirrored halls and regular masterclasses with Guruma Rimi Bhowal.',
+    tagline: 'Our premier state-of-the-art facility featuring spacious mirrored halls and regular masterclasses with Gurumaa Rimi Bhowal.',
     phone: '+91 80171 17152'
   },
   {
     id: 'birbhum',
-    name: 'Birbhum Branch (Lauberia)',
-    address: 'Lauberia 2nd Branch, Birbhum, West Bengal, India',
+    name: 'Birbhum Branch (Khoyrashol, Lauberia)',
+    address: 'Lauberia 2nd Branch, Khoyrashol, Birbhum, West Bengal, India',
     status: 'Active',
     tagline: 'Bringing classical heritage closer to the heart of Bengal with dedicated weekly intensive workshops and local festival showcases.',
+    phone: '+91 8478841659'
+  },
+  {
+    id: 'online',
+    name: 'Global Online Classes',
+    address: 'Distance Learning (Interactive Virtual Batches)',
+    status: 'Active',
+    tagline: 'Online classes available for our international or distance students with customized schedules and personal progress tracking.',
     phone: '+91 80171 17152'
   }
 ];
 
 export const GALLERY_ITEMS: GalleryItem[] = [
-  {
-    id: 'g_dsc_0158',
-    title: 'Guruma Rimi Bhowal - Classical Odissi Solo',
-    category: 'Stage Performances',
-    image: dsc_0158
-  },
   {
     id: 'g_titas_3',
     title: 'Titas & Senior Group Classical Choreography',
@@ -81,7 +88,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
   {
     id: 'g_img_wa0113',
     title: 'Kolakunja Classroom Training & Mudra Practice',
-    category: 'Workshops',
+    category: 'Stage Performances',
     image: img_wa0113
   },
   {
@@ -93,7 +100,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
   {
     id: 'g2',
     title: 'Group Performance & Student Milestones',
-    category: 'Student Achievements',
+    category: 'Festivals',
     image: image_612371681
   },
   {
@@ -105,25 +112,25 @@ export const GALLERY_ITEMS: GalleryItem[] = [
   {
     id: 'g4',
     title: 'Odissi & Kathak Regular Workshops',
-    category: 'Workshops',
+    category: 'Festivals',
     image: image_530610933
   },
   {
     id: 'g5',
     title: 'Vibrant Stage Group Choreography',
-    category: 'Stage Performances',
+    category: 'Student Achievements',
     image: image_492006963
   },
   {
     id: 'g6',
     title: 'Annual Academy Stage Event Poster',
-    category: 'Student Achievements',
+    category: 'Workshops',
     image: poster_1
   },
   {
     id: 'g7',
     title: 'Cultural Festival Banner Poster',
-    category: 'Festivals',
+    category: 'Workshops',
     image: poster_
   },
   {
@@ -135,13 +142,13 @@ export const GALLERY_ITEMS: GalleryItem[] = [
   {
     id: 'g9',
     title: 'Syllabus & Mudra Masterclass',
-    category: 'Workshops',
+    category: 'Stage Performances',
     image: rimi_b4
   },
   {
     id: 'g10',
     title: 'Traditional Abhinaya Expression',
-    category: 'Student Achievements',
+    category: '',
     image: rimi_b5
   }
 ];

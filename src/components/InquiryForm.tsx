@@ -25,6 +25,15 @@ export default function InquiryForm({ onSubmitSuccess }: InquiryFormProps) {
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
 
+  const getBranchPhone = () => {
+    return formData.preferredBranch === 'Birbhum' ? '8478841659' : '8017117152';
+  };
+
+  const getWhatsAppLink = (text: string) => {
+    const phone = getBranchPhone();
+    return `https://wa.me/91${phone}?text=${encodeURIComponent(text)}`;
+  };
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -55,7 +64,7 @@ export default function InquiryForm({ onSubmitSuccess }: InquiryFormProps) {
       parentName: formData.parentName || undefined,
       phoneNumber: formData.phoneNumber,
       email: formData.email,
-      preferredBranch: formData.preferredBranch as 'Agarpara' | 'Birbhum',
+      preferredBranch: formData.preferredBranch as 'Agarpara' | 'Birbhum' | 'Online',
       preferredDanceStyle: formData.preferredDanceStyle as 'Kathak' | 'Odissi' | 'Folk' | 'Rabindranritya' | 'Creative',
       message: formData.message,
       status: 'Pending',
@@ -206,7 +215,7 @@ export default function InquiryForm({ onSubmitSuccess }: InquiryFormProps) {
                   Direct Admission Desk
                 </span>
                 <a
-                  href="https://wa.me/918017117152?text=Hello%20Kolakunja%20Dance%20Academy%2C%20I%20am%20interested%20in%20admission%20details%20for%20my%20child%2Fmyself."
+                  href={getWhatsAppLink("Hello Kolakunja Dance Academy, I am interested in admission details for my child/myself.")}
                   target="_blank"
                   rel="noopener noreferrer"
                   id="whatsapp-admission-left"
@@ -350,6 +359,7 @@ export default function InquiryForm({ onSubmitSuccess }: InquiryFormProps) {
                       >
                         <option value="Agarpara" className="bg-[#1b0116]">Agarpara Branch (Kolkata)</option>
                         <option value="Birbhum" className="bg-[#1b0116]">Birbhum Branch (Lauberia)</option>
+                        <option value="Online" className="bg-[#1b0116]">Online Classes (Distance / International)</option>
                       </select>
                     </div>
 
@@ -419,7 +429,7 @@ export default function InquiryForm({ onSubmitSuccess }: InquiryFormProps) {
                   </div>
 
                   <a
-                    href="https://wa.me/918017117152?text=Hello%20Kolakunja%20Dance%20Academy%2C%20I%20am%20interested%20in%20admission%20details%20for%20myself%2Fmy%20child.%20Could%20you%20please%20share%20the%20details%3F"
+                    href={getWhatsAppLink("Hello Kolakunja Dance Academy, I am interested in admission details for myself/my child. Could you please share the details?")}
                     target="_blank"
                     rel="noopener noreferrer"
                     id="whatsapp-admission-direct"
@@ -454,7 +464,7 @@ export default function InquiryForm({ onSubmitSuccess }: InquiryFormProps) {
                   </div>
 
                   <p className="max-w-md text-sm text-[#FAF9F6]/80 font-sans font-light leading-relaxed">
-                    Thank you for reaching out to <strong>Kolakunja Dance Academy</strong>. Your inquiry has been logged directly into our master roster. Our Guruma, <strong>Rimi Bhowal</strong>, or her administrative panel will review and contact you via Phone or Email within 24 hours.
+                    Thank you for reaching out to <strong>Kolakunja Dance Academy</strong>. Your inquiry has been logged directly into our master roster. Our Gurumaa, <strong>Rimi Bhowal</strong>, or her administrative panel will review and contact you via Phone or Email within 24 hours.
                   </p>
 
                   <div className="p-4 rounded-xl bg-[#D4AF37]/5 border border-[#D4AF37]/25 max-w-sm w-full space-y-2">
@@ -467,7 +477,7 @@ export default function InquiryForm({ onSubmitSuccess }: InquiryFormProps) {
                     </p>
                     {(import.meta as any).env.VITE_WEB3FORMS_ACCESS_KEY ? (
                       <p className="text-[9px] text-emerald-400 font-sans border-t border-[#D4AF37]/10 pt-2">
-                        ✓ Form forwarded to Guruma's inbox via Web3Forms.
+                        ✓ Form forwarded to Gurumaa's inbox via Web3Forms.
                       </p>
                     ) : (
                       <p className="text-[9px] text-[#FAF9F6]/40 font-sans border-t border-[#D4AF37]/10 pt-2">
@@ -478,7 +488,7 @@ export default function InquiryForm({ onSubmitSuccess }: InquiryFormProps) {
 
                   <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-3 w-full justify-center max-w-sm">
                     <a
-                      href="https://wa.me/918017117152?text=Hello%20Kolakunja%20Dance%20Academy%2C%20I%20just%20submitted%20my%20admission%20inquiry%20online.%20Could%20we%20please%20discuss%20the%20details%3F"
+                      href={getWhatsAppLink("Hello Kolakunja Dance Academy, I just submitted my admission inquiry online. Could we please discuss the details?")}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center justify-center space-x-2 bg-[#25D366] hover:bg-[#1fbe58] text-white font-sans text-xs font-bold px-4 py-2.5 rounded-xl transition duration-300 uppercase tracking-widest text-center shadow-md flex-1"

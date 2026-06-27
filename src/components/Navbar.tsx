@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Users, Phone } from 'lucide-react';
 import logoPath from '../assets/images/kolakunja_logo.png';
+import poster_1 from '../assets/images/poster-1.jpg';
 
 interface NavbarProps {
   onOpenInquiry: () => void;
@@ -9,6 +10,7 @@ interface NavbarProps {
 export default function Navbar({ onOpenInquiry }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [showPosterModal, setShowPosterModal] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,14 +34,30 @@ export default function Navbar({ onOpenInquiry }: NavbarProps) {
   ];
 
   return (
-    <nav
-      id="main-nav"
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        scrolled
-          ? 'bg-[#2e0527]/95 backdrop-blur-md shadow-lg border-b border-[#D4AF37]/30 py-2'
-          : 'bg-gradient-to-b from-black/80 to-transparent py-4'
-      }`}
-    >
+    <>
+      <div className="fixed top-0 left-0 w-full z-50 flex flex-col">
+        {/* Blinking Golden Announcement Bar */}
+        <div className="bg-[#D4AF37] text-[#1b0116] text-[10px] sm:text-xs font-sans font-extrabold py-2 px-4 flex items-center justify-center gap-2 shadow-md relative overflow-hidden border-b border-[#D4AF37]/30 select-none">
+          <div className="flex items-center gap-1.5 animate-pulse">
+            <span className="inline-flex h-2.5 w-2.5 rounded-full bg-red-600 animate-ping" />
+            <span className="inline-flex h-2.5 w-2.5 rounded-full bg-red-600 absolute" />
+          </div>
+          <p 
+            onClick={() => setShowPosterModal(true)}
+            className="tracking-wider text-center uppercase cursor-pointer flex items-center flex-wrap justify-center gap-1 font-black"
+          >
+            📢 <span className="text-red-700">Ongoing:</span> SPECIAL DANCE CLASSES FOR MOTHERS! <span className="no-underline text-red-700 hover:text-red-800 ml-1 animate-pulse">Click here to View!</span>
+          </p>
+        </div>
+
+        <nav
+          id="main-nav"
+          className={`w-full transition-all duration-300 ${
+            scrolled
+              ? 'bg-[#2e0527]/95 backdrop-blur-md shadow-lg border-b border-[#D4AF37]/30 py-2'
+              : 'bg-gradient-to-b from-black/80 to-transparent py-4'
+          }`}
+        >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo and Brand */}
@@ -132,5 +150,47 @@ export default function Navbar({ onOpenInquiry }: NavbarProps) {
         </div>
       )}
     </nav>
+  </div>
+
+  {/* Ongoing Event Poster Modal */}
+  {showPosterModal && (
+    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+      <div className="absolute inset-0 bg-black/90 backdrop-blur-md" onClick={() => setShowPosterModal(false)} />
+      <div className="relative max-w-lg w-full bg-[#1b0116] border-2 border-[#D4AF37] rounded-lg overflow-hidden shadow-2xl z-10 animate-fade-in-down">
+        <div className="flex items-center justify-between p-3 border-b border-[#D4AF37]/20 bg-[#2e0527]">
+          <span className="font-serif text-sm font-bold text-[#D4AF37] uppercase tracking-wider flex items-center gap-1.5">
+            <span className="h-2 w-2 rounded-full bg-red-500 animate-pulse" />
+            Admission Going On!
+          </span>
+          <button
+            onClick={() => setShowPosterModal(false)}
+            className="p-1 rounded-full text-[#FAF9F6] hover:bg-[#D4AF37] hover:text-[#1b0116] transition cursor-pointer"
+          >
+            <X className="w-5 h-5" />
+          </button>
+        </div>
+        <div className="p-2 bg-[#0d000b] flex justify-center">
+          <img
+            src={poster_1}
+            alt="Admission Going On! Poster"
+            className="max-h-[70vh] w-auto object-contain rounded"
+            referrerPolicy="no-referrer"
+          />
+        </div>
+        <div className="p-3 bg-[#2e0527] border-t border-[#D4AF37]/20 text-center">
+          <button
+            onClick={() => {
+              setShowPosterModal(false);
+              onOpenInquiry();
+            }}
+            className="w-full py-2 bg-[#D4AF37] text-[#1b0116] text-xs font-bold uppercase tracking-widest hover:bg-[#FAF9F6] transition cursor-pointer"
+          >
+            Enroll / Enquire Now
+          </button>
+        </div>
+      </div>
+    </div>
+  )}
+</>
   );
 }

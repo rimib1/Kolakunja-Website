@@ -5,7 +5,7 @@ export interface Inquiry {
   parentName?: string;
   phoneNumber: string;
   email: string;
-  preferredBranch: 'Agarpara' | 'Birbhum';
+  preferredBranch: 'Agarpara' | 'Birbhum' | 'Online';
   preferredDanceStyle: 'Kathak' | 'Odissi' | 'Folk' | 'Rabindranritya' | 'Creative';
   message: string;
   status: 'Pending' | 'Contacted' | 'Enrolled' | 'Archived';
@@ -32,6 +32,6 @@ export interface DanceStyle {
 export interface GalleryItem {
   id: string;
   title: string;
-  category: 'Stage Performances' | 'Workshops' | 'Student Achievements' | 'Festivals';
+  category: 'Stage Performances' | 'Workshops' | 'Student Achievements' | 'Festivals' | '';
   image: string;
 }

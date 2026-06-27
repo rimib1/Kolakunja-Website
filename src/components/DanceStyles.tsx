@@ -13,35 +13,35 @@ export default function DanceStyles() {
       case 'kathak':
         return {
           syllabus: ['Tatkar (Intricate Footwork patterns)', 'Chakkars (Rapid pirouettes)', 'Abhinaya (Emotional storytelling)', 'Taals (Rhythmic cycles of Teental, Jhaptal)', 'Kavitt and Thumri expressions'],
-          batches: 'Saturdays & Sundays (3:00 PM - 5:00 PM)',
+          batches: 'As per Schedule',
           ageGroup: 'Kids (5+ years) & Adults (No upper limit)',
           certification: 'Affiliated with Pracheen Kala Kendra, Chandigarh'
         };
       case 'odissi':
         return {
           syllabus: ['Tribhanga & Chowka base stances', 'Mudra Vigyan (28 Single & 24 Double hand gestures)', 'Mangalacharan (Invocational item)', 'Battu Nrutya & Pallavi items', 'Devotional Abhinaya (Gita Govinda)'],
-          batches: 'Wednesdays & Fridays (4:30 PM - 6:30 PM)',
+          batches: 'As per Schedule',
           ageGroup: 'Kids (6+ years) & Adults (Intermediate/Advanced)',
           certification: 'Affiliated with Pracheen Kala Kendra, Chandigarh'
         };
       case 'folk':
         return {
           syllabus: ['Rabindra Nritya (Tagore dance compositions)', 'Bengali regional folk forms', 'Festive seasonal dances', 'Group sync & floor coordination', 'Traditional folk drum rhythms'],
-          batches: 'Sundays (10:00 AM - 12:00 PM)',
+          batches: 'As per Schedule',
           ageGroup: 'All age groups welcome',
           certification: 'Academy Performance Certification'
         };
       case 'creative':
         return {
           syllabus: ['Contemporary expression & posture control', 'Traditional-modern fusion choreography', 'Physical theater & storytelling', 'Self-choreography projects', 'Aesthetic spatial awareness'],
-          batches: 'Saturdays (5:30 PM - 7:30 PM)',
+          batches: 'As per Schedule',
           ageGroup: 'Teens & Adults (12+ years)',
           certification: 'Academy Performance Certification'
         };
       default:
         return {
           syllabus: [],
-          batches: 'Flexible Timings',
+          batches: 'As per Schedule',
           ageGroup: 'All ages',
           certification: 'Academy Certification'
         };
@@ -85,18 +85,14 @@ export default function DanceStyles() {
               id={`style-card-${style.id}`}
             >
               {/* Card Image Header */}
-              <div className="relative overflow-hidden aspect-[4/3] bg-purple-950">
+              <div className="relative overflow-hidden bg-purple-950/40 flex items-center justify-center p-2 h-64 sm:h-72">
                 <img
                   src={style.image}
                   alt={style.name}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80 group-hover:opacity-100"
+                  className="max-w-full max-h-full object-contain rounded-md transition-transform duration-500 group-hover:scale-105 opacity-90 group-hover:opacity-100"
                   referrerPolicy="no-referrer"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1b0116] via-transparent to-transparent" />
-                <div className="absolute bottom-3 left-4 flex items-center space-x-1.5 text-[#D4AF37]">
-                  <Sparkles className="w-4 h-4" />
-                  <span className="text-xs font-sans tracking-widest font-semibold uppercase">Est. 2023</span>
-                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1b0116]/80 via-transparent to-transparent pointer-events-none" />
               </div>
 
               {/* Card Content */}

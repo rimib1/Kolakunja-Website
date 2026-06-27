@@ -47,10 +47,10 @@ export default function Gallery() {
           ))}
         </div>
 
-        {/* Responsive Grid Gallery */}
+        {/* Responsive Masonry Gallery */}
         <motion.div
           layout
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="columns-1 sm:columns-2 lg:columns-3 gap-6"
           id="gallery-grid"
         >
           <AnimatePresence mode="popLayout">
@@ -62,34 +62,37 @@ export default function Gallery() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.4 }}
-                className="group relative aspect-[4/3] bg-[#2e0527] rounded-lg overflow-hidden shadow-2xl border border-[#D4AF37]/15 cursor-pointer"
+                className={`break-inside-avoid mb-6 group relative bg-[#2e0527] rounded-lg overflow-hidden shadow-2xl cursor-pointer transition-all duration-300 ${
+                  item.id === 'g6'
+                    ? 'border-2 border-red-500 shadow-[0_0_25px_rgba(239,68,68,0.8)] animate-pulse ring-2 ring-[#D4AF37]/60'
+                    : 'border border-[#D4AF37]/15'
+                }`}
                 onClick={() => setLightboxImage(item.image)}
               >
-                {/* Image */}
+                {/* Custom Ongoing Badge for poster-1 (g6) */}
+                {item.id === 'g6' && (
+                  <div className="absolute top-4 left-4 bg-red-600 text-white font-sans font-black text-[9px] sm:text-[10px] uppercase tracking-widest px-3 py-1.5 rounded-full shadow-[0_0_15px_rgba(239,68,68,1)] z-20 flex items-center gap-1.5 animate-bounce">
+                    <span className="relative flex h-2 w-2">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
+                    </span>
+                    Admission Going On!
+                  </div>
+                )}
+
+                {/* Image (Unforced original aspect ratio) */}
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="w-full h-full object-cover transition duration-500 group-hover:scale-105 opacity-85 group-hover:opacity-100"
+                  className="w-full h-auto transition duration-500 group-hover:scale-105 opacity-90 group-hover:opacity-100"
                   referrerPolicy="no-referrer"
                 />
 
                 {/* Hover Details Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1b0116]/95 via-[#1b0116]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6" id={`gallery-item-${item.id}`}>
-                  <span className="text-[#D4AF37] font-sans text-[10px] sm:text-xs font-semibold uppercase tracking-wider mb-1">
-                    {item.category}
-                  </span>
-                  <h3 className="text-white font-serif text-base sm:text-lg font-bold tracking-wide leading-tight">
-                    {item.title}
-                  </h3>
-                  <div className="mt-3 flex items-center space-x-1.5 text-[#D4AF37] text-xs sm:text-sm font-sans font-medium">
-                    <Eye className="w-4 h-4" />
-                    <span>Zoom Image</span>
+                <div className="absolute inset-0 bg-[#1b0116]/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center" id={`gallery-item-${item.id}`}>
+                  <div className="w-12 h-12 rounded-full bg-[#D4AF37] text-[#1b0116] flex items-center justify-center shadow-lg transform scale-90 group-hover:scale-100 transition duration-300">
+                    <ZoomIn className="w-6 h-6" />
                   </div>
-                </div>
-
-                {/* Small preview badge for non-hover states */}
-                <div className="absolute bottom-3 left-4 bg-black/60 backdrop-blur-sm px-3 py-1 rounded text-[10px] sm:text-xs text-[#FAF9F6] group-hover:opacity-0 transition duration-300">
-                  {item.category}
                 </div>
               </motion.div>
             ))}
