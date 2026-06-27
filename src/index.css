@@ -61,3 +61,65 @@ h1, h2, h3, h4, h5, h6 {
 ::-webkit-scrollbar-thumb:hover {
   background: #f2c735;
 }
+
+/* Professional Print Styles for the Admission Form Sheet */
+@media print {
+  html, body {
+    background-color: #ffffff !important;
+    background-image: none !important;
+    color: #000000 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Hide entire page structure except the print sheet */
+  #app-root, 
+  #main-nav, 
+  #main-footer, 
+  header, 
+  footer, 
+  main, 
+  section, 
+  .print\:hidden {
+    display: none !important;
+  }
+
+  /* Show and size the printable form sheet */
+  #admission-print-sheet {
+    display: block !important;
+    position: fixed !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 210mm !important; /* A4 width */
+    height: 297mm !important; /* A4 height */
+    padding: 15mm !important;
+    margin: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+    z-index: 9999999 !important;
+  }
+
+  #admission-print-sheet * {
+    color: #000000 !important;
+    border-color: #000000 !important;
+  }
+
+  /* Keep the institutional stamp circle looking proper on black and white */
+  #admission-print-sheet .border-dashed {
+    border-style: dashed !important;
+    border-color: #333333 !important;
+  }
+
+  #admission-print-sheet .text-\[\#D4AF37\] {
+    color: #333333 !important;
+  }
+
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+}

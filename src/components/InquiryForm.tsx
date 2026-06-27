@@ -2,12 +2,14 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Send, CheckCircle, Award, ShieldAlert, Sparkles, MapPin } from 'lucide-react';
 import { Inquiry } from '../types';
+import OfficialAdmissionForm from './OfficialAdmissionForm';
 
 interface InquiryFormProps {
   onSubmitSuccess: (newInquiry: Inquiry) => void;
 }
 
 export default function InquiryForm({ onSubmitSuccess }: InquiryFormProps) {
+  const [activeTab, setActiveTab] = useState<'quick' | 'official'>('quick');
   const [formData, setFormData] = useState({
     studentName: '',
     age: '',
@@ -122,22 +124,56 @@ export default function InquiryForm({ onSubmitSuccess }: InquiryFormProps) {
       <div className="absolute top-1/2 right-[-200px] w-[500px] h-[500px] bg-[#D4AF37]/5 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute top-1/3 left-[-200px] w-[500px] h-[500px] bg-[#D4AF37]/3 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-16">
+      <div className={`mx-auto px-4 sm:px-6 lg:px-8 relative z-10 transition-all duration-500 ${activeTab === 'official' ? 'max-w-6xl' : 'max-w-4xl'}`}>
+        <div className="text-center mb-10">
           <span className="text-[#D4AF37] font-sans text-xs font-semibold uppercase tracking-[0.2em] mb-2 block">
             Enrollment Gateway
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-[#FAF9F6] tracking-tight">
-            Admission Inquiry
+            Admissions & Enrollment
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent mx-auto mt-4" />
           <p className="max-w-xl mx-auto text-sm sm:text-base text-[#FAF9F6]/80 font-sans font-light mt-4">
-            Take your first step today under the mentorship of Rimi Bhowal. Submit your information below, and we will contact you shortly with batch allocations.
+            Take your first step under the mentorship of Rimi Bhowal. Select an option below to submit a quick online inquiry or generate your official printable form.
           </p>
         </div>
 
-        {/* Outer Form Card */}
-        <div className="bg-[#2e0527] rounded-xl border border-[#D4AF37]/35 shadow-2xl overflow-hidden grid grid-cols-1 md:grid-cols-12">
+        {/* Tab Switcher */}
+        <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-12 print:hidden" id="admission-tab-switcher">
+          <button
+            onClick={() => setActiveTab('quick')}
+            className={`w-full sm:w-auto px-6 py-3 rounded font-sans text-xs font-bold uppercase tracking-widest cursor-pointer transition-all duration-300 ${
+              activeTab === 'quick'
+                ? 'bg-[#D4AF37] text-[#1b0116] shadow-lg shadow-[#D4AF37]/20 border border-[#D4AF37]'
+                : 'bg-[#2e0527]/40 border border-[#D4AF37]/20 hover:border-[#D4AF37]/60 text-[#FAF9F6] hover:bg-[#2e0527]/75'
+            }`}
+          >
+            1. Quick Online Inquiry
+          </button>
+          <button
+            onClick={() => setActiveTab('official')}
+            className={`w-full sm:w-auto px-6 py-3 rounded font-sans text-xs font-bold uppercase tracking-widest cursor-pointer transition-all duration-300 ${
+              activeTab === 'official'
+                ? 'bg-[#D4AF37] text-[#1b0116] shadow-lg shadow-[#D4AF37]/20 border border-[#D4AF37]'
+                : 'bg-[#2e0527]/40 border border-[#D4AF37]/20 hover:border-[#D4AF37]/60 text-[#FAF9F6] hover:bg-[#2e0527]/75'
+            }`}
+          >
+            2. Official Admission Form (PDF / Print)
+          </button>
+        </div>
+
+        <AnimatePresence mode="wait">
+          {activeTab === 'quick' ? (
+            <motion.div
+              key="quick-inquiry-tab"
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -15 }}
+              transition={{ duration: 0.3 }}
+              className="w-full"
+            >
+              {/* Outer Form Card */}
+              <div className="bg-[#2e0527] rounded-xl border border-[#D4AF37]/35 shadow-2xl overflow-hidden grid grid-cols-1 md:grid-cols-12">
           {/* Form Left Branding Column (4 columns) */}
           <div className="md:col-span-4 bg-[#1b0116] text-[#FAF9F6] p-8 sm:p-10 flex flex-col justify-between relative overflow-hidden border-r border-[#D4AF37]/25">
             <div className="absolute inset-0 opacity-10 bg-radial-pattern pointer-events-none" />
@@ -464,6 +500,20 @@ export default function InquiryForm({ onSubmitSuccess }: InquiryFormProps) {
             </AnimatePresence>
           </div>
         </div>
+            </motion.div>
+          ) : (
+            <motion.div
+              key="official-form-tab"
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -15 }}
+              transition={{ duration: 0.3 }}
+              className="w-full"
+            >
+              <OfficialAdmissionForm />
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </section>
   );
