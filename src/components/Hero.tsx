@@ -18,6 +18,8 @@ import dsc03937 from '../assets/images/DSC03937.jpg';
 import dsc03950 from '../assets/images/DSC03950.jpg';
 import dsc04562 from '../assets/images/DSC04562.jpg';
 import img_wa0113_new from '../assets/images/IMG_20260105_WA0113.jpg';
+import wa_hero_1 from '../assets/images/wa_2026_06_29_1.jpeg';
+import wa_hero_2 from '../assets/images/wa_2026_06_29_2.jpeg';
 
 interface HeroProps {
   onOpenInquiry: () => void;
@@ -70,6 +72,14 @@ export default function Hero({ onOpenInquiry }: HeroProps) {
     {
       url: rimi_b5,
       alt: 'Rimi Bhowal performing on Stage with traditional jewelry'
+    },
+    {
+      url: wa_hero_1,
+      alt: 'Kolakunja Stage Event Performance'
+    },
+    {
+      url: wa_hero_2,
+      alt: 'Beautiful Traditional Group Dance Formations'
     }
   ];
 
