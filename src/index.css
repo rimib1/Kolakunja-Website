@@ -95,8 +95,8 @@ h1, h2, h3, h4, h5, h6 {
     left: 0 !important;
     top: 0 !important;
     width: 210mm !important; /* Exact A4 Width */
-    height: 297mm !important; /* Exact A4 Height */
-    padding: 10mm 15mm 10mm 15mm !important; /* Balanced inner margins to prevent vertical overflow */
+    height: 280mm !important; /* Slightly reduced from 297mm to guarantee a single page print on mobile & laptop */
+    padding: 10mm 15mm 18mm 15mm !important; /* Increased bottom padding to lift signature section higher */
     margin: 0 !important;
     border: none !important;
     box-shadow: none !important;
